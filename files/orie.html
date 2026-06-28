@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Orie — Mascote IA Ambiental</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="orie-wrapper">
+    <!-- SVG inline para acesso total via JS/CSS -->
+    <svg id="orie-mascot" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" role="img" aria-label="Orie - mascote de IA ambiental">
+      <title>Orie</title>
+      <desc>Mascote Orie: planta fofa em vaso de barro com rosto expressivo</desc>
+
+      <defs>
+        <linearGradient id="grad-pot" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%"   stop-color="#F28C52"/>
+          <stop offset="60%"  stop-color="#E67845"/>
+          <stop offset="100%" stop-color="#D86739"/>
+        </linearGradient>
+        <linearGradient id="grad-pot-rim" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%"   stop-color="#F59A65"/>
+          <stop offset="100%" stop-color="#D86739"/>
+        </linearGradient>
+        <linearGradient id="grad-soil" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%"   stop-color="#5C3528"/>
+          <stop offset="100%" stop-color="#4B281E"/>
+        </linearGradient>
+        <linearGradient id="grad-leaf-top" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%"   stop-color="#6ED66E"/>
+          <stop offset="100%" stop-color="#43B84A"/>
+        </linearGradient>
+        <linearGradient id="grad-leaf-left" x1="100%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%"   stop-color="#6ED66E"/>
+          <stop offset="100%" stop-color="#43B84A"/>
+        </linearGradient>
+        <linearGradient id="grad-leaf-right" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%"   stop-color="#6ED66E"/>
+          <stop offset="100%" stop-color="#43B84A"/>
+        </linearGradient>
+        <linearGradient id="grad-leaf-bl" x1="100%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%"   stop-color="#5AC75A"/>
+          <stop offset="100%" stop-color="#2FA24A"/>
+        </linearGradient>
+        <linearGradient id="grad-leaf-br" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%"   stop-color="#5AC75A"/>
+          <stop offset="100%" stop-color="#2FA24A"/>
+        </linearGradient>
+        <linearGradient id="grad-stem" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%"   stop-color="#2FA24A"/>
+          <stop offset="50%"  stop-color="#43B84A"/>
+          <stop offset="100%" stop-color="#2FA24A"/>
+        </linearGradient>
+        <radialGradient id="grad-shadow" cx="50%" cy="50%" r="50%">
+          <stop offset="0%"   stop-color="#4B281E" stop-opacity="0.22"/>
+          <stop offset="100%" stop-color="#4B281E" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+
+      <!-- SOMBRA -->
+      <g id="shadow">
+        <ellipse cx="200" cy="485" rx="82" ry="11" fill="url(#grad-shadow)"/>
+      </g>
+
+      <!-- VASO -->
+      <g id="pot" style="transform-origin: 200px 420px;">
+        <path id="pot-body"
+          d="M118,310 
+             Q115,418 110,458 
+             Q106,474 108,480 
+             Q200,496 292,480 
+             Q294,474 290,458 
+             Q285,418 282,310 Z"
+          fill="url(#grad-pot)"/>
+        <!-- Reflexo interno -->
+        <path d="M128,322 Q124,412 120,454"
+          stroke="#F59A65" stroke-width="5" stroke-linecap="round"
+          fill="none" opacity="0.38"/>
+        <!-- Borda / aba do vaso -->
+        <rect id="pot-rim"
+          x="104" y="296" width="192" height="26" rx="13"
+          fill="url(#grad-pot-rim)"/>
+        <!-- Destaque na aba -->
+        <rect x="114" y="298" width="172" height="8" rx="6"
+          fill="#F7A97A" opacity="0.45"/>
+        <!-- Olho esquerdo -->
+        <g id="eye-left" style="transform-box: fill-box; transform-origin: center center;">
+          <ellipse cx="166" cy="378" rx="15" ry="17" fill="#111111"/>
+          <g id="eye-left-shine">
+            <circle id="shine-left-big"   cx="160" cy="371" r="5"   fill="#FFFFFF"/>
+            <circle id="shine-left-small" cx="171" cy="383" r="2.5" fill="#FFFFFF" opacity="0.65"/>
+          </g>
+        </g>
+        <!-- Olho direito -->
+        <g id="eye-right" style="transform-box: fill-box; transform-origin: center center;">
+          <ellipse cx="234" cy="378" rx="15" ry="17" fill="#111111"/>
+          <g id="eye-right-shine">
+            <circle id="shine-right-big"   cx="228" cy="371" r="5"   fill="#FFFFFF"/>
+            <circle id="shine-right-small" cx="239" cy="383" r="2.5" fill="#FFFFFF" opacity="0.65"/>
+          </g>
+        </g>
+        <!-- Boca -->
+        <g id="mouth" style="transform-box: fill-box; transform-origin: center center;">
+          <path id="mouth-smile"
+            d="M183,416 Q200,432 217,416"
+            stroke="#111111" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+        </g>
+        <!-- Bochechas -->
+        <g id="cheeks">
+          <ellipse id="cheek-left"  cx="144" cy="400" rx="15" ry="9" fill="#F28C52" opacity="0.32"/>
+          <ellipse id="cheek-right" cx="256" cy="400" rx="15" ry="9" fill="#F28C52" opacity="0.32"/>
+        </g>
+      </g>
+
+      <!-- TERRA -->
+      <g id="soil">
+        <ellipse id="soil-top" cx="200" cy="308" rx="88" ry="15"
+          fill="url(#grad-soil)"/>
+        <!-- Textura da terra (3 linhas curtas) -->
+        <path d="M170,306 Q176,304 182,306" stroke="#4B281E" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.5"/>
+        <path d="M188,310 Q196,307 204,310" stroke="#4B281E" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.4"/>
+        <path d="M212,306 Q220,303 228,306" stroke="#4B281E" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.5"/>
+      </g>
+
+      <!-- CAULE -->
+      <g id="stem" style="transform-box: fill-box; transform-origin: center bottom;">
+        <path id="stem-main"
+          d="M200,308 Q197,260 200,180 Q201,140 200,100"
+          stroke="url(#grad-stem)" stroke-width="11" stroke-linecap="round" fill="none"/>
+        <path id="stem-branch-left-upper"
+          d="M200,155 Q174,144 148,130"
+          stroke="#43B84A" stroke-width="8" stroke-linecap="round" fill="none"/>
+        <path id="stem-branch-right-upper"
+          d="M200,155 Q226,144 252,130"
+          stroke="#43B84A" stroke-width="8" stroke-linecap="round" fill="none"/>
+        <path id="stem-branch-left-lower"
+          d="M200,225 Q168,214 135,205"
+          stroke="#43B84A" stroke-width="8" stroke-linecap="round" fill="none"/>
+        <path id="stem-branch-right-lower"
+          d="M200,225 Q232,214 265,205"
+          stroke="#43B84A" stroke-width="8" stroke-linecap="round" fill="none"/>
+      </g>
+
+      <!-- FOLHAS -->
+
+      <!-- Folha superior -->
+      <g id="leaf-top" style="transform-box: fill-box; transform-origin: center bottom;">
+        <path d="M200,62 
+                 C220,56 250,66 253,91 
+                 C257,116 228,120 200,101 
+                 C172,120 143,116 147,91 
+                 C150,66 180,56 200,62 Z"
+          fill="url(#grad-leaf-top)"/>
+        <path d="M200,68 Q200,85 200,99"
+          stroke="#2FA24A" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.6"/>
+      </g>
+
+      <!-- Folha esquerda superior -->
+      <g id="leaf-left" style="transform-box: fill-box; transform-origin: right center;">
+        <path d="M148,130
+                 C134,108 106,106 98,123
+                 C90,141 110,160 139,149
+                 C148,169 163,171 169,155
+                 C179,134 164,128 148,130 Z"
+          fill="url(#grad-leaf-left)"/>
+        <path d="M147,133 Q133,143 106,142"
+          stroke="#2FA24A" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.6"/>
+      </g>
+
+      <!-- Folha direita superior -->
+      <g id="leaf-right" style="transform-box: fill-box; transform-origin: left center;">
+        <path d="M252,130
+                 C266,108 294,106 302,123
+                 C310,141 290,160 261,149
+                 C252,169 237,171 231,155
+                 C221,134 236,128 252,130 Z"
+          fill="url(#grad-leaf-right)"/>
+        <path d="M253,133 Q267,143 294,142"
+          stroke="#2FA24A" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.6"/>
+      </g>
+
+      <!-- Folha inferior esquerda -->
+      <g id="leaf-bottom-left" style="transform-box: fill-box; transform-origin: right center;">
+        <path d="M135,205
+                 C118,184 89,185 81,202
+                 C73,220 95,241 126,229
+                 C132,250 149,253 157,237
+                 C166,215 152,203 135,205 Z"
+          fill="url(#grad-leaf-bl)"/>
+        <path d="M134,208 Q117,219 90,218"
+          stroke="#2FA24A" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.6"/>
+      </g>
+
+      <!-- Folha inferior direita -->
+      <g id="leaf-bottom-right" style="transform-box: fill-box; transform-origin: left center;">
+        <path d="M265,205
+                 C282,184 311,185 319,202
+                 C327,220 305,241 274,229
+                 C268,250 251,253 243,237
+                 C234,215 248,203 265,205 Z"
+          fill="url(#grad-leaf-br)"/>
+        <path d="M266,208 Q283,219 310,218"
+          stroke="#2FA24A" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.6"/>
+      </g>
+
+    </svg>
+  </div>
+
+  <span class="orie-label">Orie</span>
+
+  <!-- Painel de expressões -->
+  <div class="controls">
+    <h3>Expressões</h3>
+    <button class="btn-expression active" data-state="happy"      onclick="setState('happy')">😊 Feliz</button>
+    <button class="btn-expression"        data-state="thinking"   onclick="setState('thinking')">🤔 Pensando</button>
+    <button class="btn-expression"        data-state="curious"    onclick="setState('curious')">👀 Curioso</button>
+    <button class="btn-expression"        data-state="sad"        onclick="setState('sad')">😢 Triste</button>
+    <button class="btn-expression"        data-state="excited"    onclick="setState('excited')">⚡ Animado</button>
+    <button class="btn-expression"        data-state="celebrating" onclick="setState('celebrating')">🎉 Celebrando</button>
+    <button class="btn-expression"        data-state="sleeping"   onclick="setState('sleeping')">😴 Dormindo</button>
+    <button class="btn-expression"        data-state="confused"   onclick="setState('confused')">😵 Confuso</button>
+  </div>
+
+  <script src="orie.js"></script>
+</body>
+</html>

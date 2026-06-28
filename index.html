@@ -1,0 +1,3584 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>Orienta — Sua rota para o sucesso</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- APP SHELL -->
+    <div id="app">
+      <!-- ===================== SPLASH SCREEN ===================== -->
+      <div id="screen-splash" class="screen active">
+        <div class="splash-bg"></div>
+        <div class="splash-content">
+          <div class="splash-logo-wrap">
+            <img
+              src="1edd1622-9dfc-42bb-8c48-7f87577ea4c3-Photoroom.png"
+              alt="Orienta Logo"
+              class="splash-logo"
+            />
+          </div>
+          <div class="splash-text">
+            <h1 class="splash-name">Orienta</h1>
+            <p class="splash-tagline">
+              "Seu imóvel fala. A legislação explica.<br />Nós traduzimos."
+            </p>
+          </div>
+          <div class="splash-loader">
+            <div class="loader-bar"><div class="loader-fill"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SCREEN: LOGIN -->
+      <div class="screen" id="screen-login">
+        <div class="login-bg-pattern"></div>
+        <div class="login-container">
+          <div class="login-logo-wrap">
+            <div class="logo-svg-wrap">
+              <img
+                src="1edd1622-9dfc-42bb-8c48-7f87577ea4c3-Photoroom.png"
+                alt="Orienta Logo"
+                class="login-logo"
+              />
+            </div>
+            <h1 class="login-brand">Orienta</h1>
+            <p class="login-tagline">Sua rota para o sucesso</p>
+          </div>
+
+          <div class="login-form">
+            <div class="input-group">
+              <span class="input-icon">
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                >
+                  <circle cx="12" cy="8" r="4" />
+                  <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" />
+                </svg>
+              </span>
+              <input
+                type="text"
+                placeholder="E-mail ou Nome de Usuário"
+                class="input-field"
+                id="login-user"
+              />
+            </div>
+            <div class="input-group">
+              <span class="input-icon">
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                >
+                  <rect x="3" y="11" width="18" height="11" rx="2" />
+                  <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                </svg>
+              </span>
+              <input
+                type="password"
+                placeholder="Senha"
+                class="input-field"
+                id="login-pass"
+              />
+              <span class="input-icon-right" id="toggle-pass">
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                >
+                  <path
+                    d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94"
+                  />
+                  <path
+                    d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19"
+                  />
+                  <line x1="1" y1="1" x2="23" y2="23" />
+                </svg>
+              </span>
+            </div>
+            <div class="forgot-wrap">
+              <a href="#" class="forgot-link">Esqueci a senha?</a>
+            </div>
+            <button class="btn-primary" onclick="doLogin()">ENTRAR</button>
+            <div class="social-divider"><span>Ou entrar com:</span></div>
+            <div class="social-btns">
+              <button class="btn-social">
+                <svg width="18" height="18" viewBox="0 0 24 24">
+                  <path
+                    d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                    fill="#4285F4"
+                  />
+                  <path
+                    d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                    fill="#34A853"
+                  />
+                  <path
+                    d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"
+                    fill="#FBBC05"
+                  />
+                  <path
+                    d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                    fill="#EA4335"
+                  />
+                </svg>
+                Google
+              </button>
+              <button class="btn-social">
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98l-.09.06c-.22.15-2.19 1.28-2.17 3.83.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.85M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"
+                  />
+                </svg>
+                Apple
+              </button>
+            </div>
+            <p class="register-link">
+              Ainda não tem conta?
+              <a href="#" onclick="showScreen('screen-register')"
+                >Cadastre-se agora!</a
+              >
+            </p>
+          </div>
+          <p class="login-footer">Orienta © 2024</p>
+        </div>
+      </div>
+
+      <!-- SCREEN: REGISTER -->
+      <div class="screen" id="screen-register">
+        <div class="topbar topbar-simple">
+          <button class="btn-back" onclick="showScreen('screen-login')">
+            <svg
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.2"
+            >
+              <path d="M19 12H5M12 5l-7 7 7 7" />
+            </svg>
+          </button>
+          <span>Criar conta</span>
+        </div>
+        <div class="content-scroll pad-top-topbar">
+          <div class="register-logo-sm">
+            <img
+              src="1edd1622-9dfc-42bb-8c48-7f87577ea4c3-Photoroom.png"
+              alt="Orienta Logo"
+              class="register-logo"
+            />
+          </div>
+          <h2 class="section-title-lg">Bem-vindo ao Orienta</h2>
+          <p class="section-subtitle">Preencha seus dados para começar</p>
+          <div class="form-stack">
+            <div class="input-group">
+              <input
+                type="text"
+                placeholder="Nome completo"
+                class="input-field"
+              />
+            </div>
+            <div class="input-group">
+              <input type="text" placeholder="CPF" class="input-field" />
+            </div>
+            <div class="input-group">
+              <input
+                type="text"
+                placeholder="Número do CAR (opcional)"
+                class="input-field"
+              />
+            </div>
+            <div class="input-group">
+              <input type="email" placeholder="E-mail" class="input-field" />
+            </div>
+            <div class="input-group">
+              <input type="password" placeholder="Senha" class="input-field" />
+            </div>
+            <div class="input-group">
+              <input
+                type="password"
+                placeholder="Confirmar senha"
+                class="input-field"
+              />
+            </div>
+            <button class="btn-primary" onclick="doLogin()">
+              CRIAR MINHA CONTA
+            </button>
+            <button class="btn-social-alt" onclick="showScreen('screen-login')">
+              Já tenho uma conta
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- SCREEN: HOME -->
+      <div class="screen" id="screen-home">
+        <div class="topbar">
+          <div class="topbar-left">
+            <img
+              src="1edd1622-9dfc-42bb-8c48-7f87577ea4c3-Photoroom.png"
+              alt="Orienta Logo"
+              class="topbar-logo"
+            />
+          </div>
+          <div class="topbar-right">
+            <button
+              id="btn-contrast"
+              class="btn-icon btn-contrast-icon"
+              type="button"
+              onclick="toggleContrastFromHeader()"
+              aria-label="Ativar ou desativar alto contraste"
+              aria-pressed="false"
+              title="Alto contraste"
+            >
+              <svg
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <circle cx="12" cy="12" r="9" />
+                <path d="M12 3v18" />
+                <path d="M12 3a9 9 0 0 0 0 18z" fill="currentColor" />
+              </svg>
+            </button>
+            <button
+              id="btn-accessibility"
+              class="btn-icon"
+              onclick="showScreen('screen-accessibility')"
+              title="Acessibilidade"
+            >
+              <svg
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <circle cx="12" cy="5" r="2" />
+                <path d="M12 22V10M8 8l-3 4h14l-3-4M9 22l1-6M15 22l-1-6" />
+              </svg>
+              <span class="btn-accessibility-dot" aria-hidden="true"></span>
+            </button>
+            <button
+              class="btn-icon"
+              onclick="showScreen('screen-notifications')"
+            >
+              <svg
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" />
+                <path d="M13.73 21a2 2 0 0 1-3.46 0" />
+              </svg>
+              <span class="notif-dot"></span>
+            </button>
+            <button
+              onclick="showScreen('screen-profile')"
+              style="
+                background: none;
+                border: none;
+                cursor: pointer;
+                padding: 0;
+              "
+              title="Acessar perfil"
+            >
+              <div class="avatar-sm">SR</div>
+            </button>
+          </div>
+        </div>
+
+        <div class="content-scroll pad-top-topbar">
+          <!-- Hero acolhedor com data + saudação + ícone da propriedade -->
+          <div class="home-hero">
+            <div class="home-hero-top">
+              <div>
+                <p class="home-hero-date" id="home-hero-date">
+                  Sábado, 27 de junho
+                </p>
+                <p class="greeting-time" id="greeting-text">Bom dia,</p>
+                <h2 class="greeting-name">Seu Raimundo 👋</h2>
+              </div>
+              <div class="home-hero-avatar" aria-hidden="true">🌿</div>
+            </div>
+            <div class="orie-welcome">
+              <div class="orie-bubble" role="note">
+                <p>Oi Seu Raimundo! Sou o <strong>Orie</strong> 🌱</p>
+                <p>Tô aqui pra te ajudar a entender tudo da sua terra. Bora?</p>
+                <div class="orie-bubble-tail" aria-hidden="true">
+                  <svg viewBox="0 0 22 16" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 0 L22 0 L10 16 Z" fill="currentColor" />
+                  </svg>
+                </div>
+              </div>
+              <div class="orie-svg-wrap" aria-hidden="true">
+                <div class="orie-svg"></div>
+              </div>
+            </div>
+            <p class="greeting-sub">
+              Vamos conferir como está sua propriedade hoje?
+            </p>
+          </div>
+
+          <!-- Property Card (com atalho para o resumo dentro) -->
+          <h3 class="section-label">Minha propriedade</h3>
+          <div class="property-card">
+            <div class="prop-card-header" onclick="showScreen('screen-imovel')" role="button" tabindex="0" aria-label="Ver detalhes da propriedade">
+              <div class="prop-card-icon" aria-hidden="true">🏡</div>
+              <div class="prop-card-info">
+                <p class="prop-label">Fazenda São João</p>
+                <p class="prop-location">📍 Sertão do Pajeú, PE</p>
+              </div>
+              <div class="prop-status-badge ok">✓ Regular</div>
+            </div>
+            <div class="prop-card-stats" onclick="showScreen('screen-imovel')" role="button" tabindex="0" aria-label="Ver detalhes da propriedade">
+              <div class="prop-stat">
+                <span class="prop-stat-val">245</span>
+                <span class="prop-stat-lbl">ha total</span>
+              </div>
+              <span class="prop-stat-div" aria-hidden="true"></span>
+              <div class="prop-stat">
+                <span class="prop-stat-val">48</span>
+                <span class="prop-stat-lbl">ha Reserva</span>
+              </div>
+              <span class="prop-stat-div" aria-hidden="true"></span>
+              <div class="prop-stat">
+                <span class="prop-stat-val">4</span>
+                <span class="prop-stat-lbl">áreas</span>
+              </div>
+            </div>
+            <button
+              class="prop-card-summary-btn"
+              onclick="showScreen('screen-diagnostico')"
+              aria-label="Ver resumo rápido da propriedade no diagnóstico"
+            >
+              <span class="prop-card-summary-icon" aria-hidden="true">📊</span>
+              <span class="prop-card-summary-text">
+                <span class="prop-card-summary-title">
+                  Deseja ver um resumo rápido da sua propriedade?
+                </span>
+                <span class="prop-card-summary-sub">Toque para abrir o diagnóstico</span>
+              </span>
+              <span class="prop-card-summary-arrow" aria-hidden="true">→</span>
+            </button>
+          </div>
+
+          <!-- Dica do dia -->
+          <div
+            class="dica-dia"
+            id="dica-dia"
+            role="region"
+            aria-label="Dica do dia"
+          >
+            <div class="dica-dia-head">
+              <span class="dica-dia-title">💡 Dica do dia</span>
+              <button
+                class="dica-dia-next"
+                onclick="nextDica()"
+                aria-label="Próxima dica"
+              >
+                Próxima →
+              </button>
+            </div>
+            <div class="dica-dia-body">
+              <div class="dica-dia-icon" id="dica-icon" aria-hidden="true">💡</div>
+              <p class="dica-dia-text" id="dica-text">
+                Você sabia? Recuperar a APP do Córrego São João pode render
+                crédito rural pra você.
+              </p>
+            </div>
+            <button
+              class="dica-dia-listen"
+              onclick="listenDica()"
+              aria-label="Ouvir dica do dia"
+            >
+              <span aria-hidden="true">🔊</span> Ouvir dica
+            </button>
+          </div>
+
+          <!-- Quick Actions -->
+          <h3 class="section-label">O que você quer fazer?</h3>
+          <div class="quick-actions">
+            <button class="qa-btn" onclick="showScreen('screen-ia')">
+              <div
+                class="qa-icon"
+                style="background: linear-gradient(135deg, #1b3a5c, #3a8c68)"
+              >
+                <svg
+                  width="26"
+                  height="26"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="white"
+                  stroke-width="1.8"
+                >
+                  <circle cx="12" cy="12" r="10" />
+                  <path d="M12 8v4M12 16h.01" />
+                </svg>
+              </div>
+              <span>Conversar com IA</span>
+            </button>
+            <button class="qa-btn" onclick="showScreen('screen-imovel')">
+              <div
+                class="qa-icon"
+                style="background: linear-gradient(135deg, #2e7d32, #66bb6a)"
+              >
+                <svg
+                  width="26"
+                  height="26"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="white"
+                  stroke-width="1.8"
+                >
+                  <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                  <polyline points="9 22 9 12 15 12 15 22" />
+                </svg>
+              </div>
+              <span>Meu Imóvel</span>
+            </button>
+            <button class="qa-btn" onclick="showScreen('screen-diagnostico')">
+              <div
+                class="qa-icon"
+                style="background: linear-gradient(135deg, #e65100, #ff8f00)"
+              >
+                <svg
+                  width="26"
+                  height="26"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="white"
+                  stroke-width="1.8"
+                >
+                  <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+                </svg>
+              </div>
+              <span>Diagnóstico</span>
+            </button>
+            <button class="qa-btn" onclick="showScreen('screen-comunidade')">
+              <div
+                class="qa-icon"
+                style="background: linear-gradient(135deg, #6a1b9a, #ab47bc)"
+              >
+                <svg
+                  width="26"
+                  height="26"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="white"
+                  stroke-width="1.8"
+                >
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                  <circle cx="9" cy="7" r="4" />
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                </svg>
+              </div>
+              <span>Comunidade</span>
+            </button>
+          </div>
+
+          <div style="height: 100px"></div>
+        </div>
+
+        <nav class="bottom-nav">
+          <button
+            class="nav-item active"
+            onclick="switchTab(this, 'screen-home')"
+          >
+            <svg
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+            </svg>
+            <span>Início</span>
+          </button>
+          <button class="nav-item" onclick="switchTab(this, 'screen-ia')">
+            <svg
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <circle cx="12" cy="12" r="10" />
+              <path d="M12 8v4M12 16h.01" />
+            </svg>
+            <span>IA</span>
+          </button>
+          <button class="nav-item" onclick="switchTab(this, 'screen-mapa')">
+            <svg
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6" />
+              <line x1="8" y1="2" x2="8" y2="18" />
+              <line x1="16" y1="6" x2="16" y2="22" />
+            </svg>
+            <span>Mapa</span>
+          </button>
+          <button
+            class="nav-item"
+            onclick="switchTab(this, 'screen-comunidade')"
+          >
+            <svg
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+              <circle cx="9" cy="7" r="4" />
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+              <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+            </svg>
+            <span>Comunidade</span>
+          </button>
+          <button class="nav-item" onclick="switchTab(this, 'screen-suporte')">
+            <svg
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
+              />
+            </svg>
+            <span>Suporte</span>
+          </button>
+        </nav>
+
+        <!-- WhatsApp Button -->
+        <a
+          href="https://wa.me/"
+          target="_blank"
+          class="whatsapp-fab"
+          title="WhatsApp"
+        >
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+            <path
+              d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"
+            />
+          </svg>
+        </a>
+      </div>
+
+      <!-- SCREEN: IA CHAT -->
+      <div class="screen" id="screen-ia">
+        <div class="topbar">
+          <button class="btn-back" onclick="goBack()">
+            <svg
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.2"
+            >
+              <path d="M19 12H5M12 5l-7 7 7 7" />
+            </svg>
+          </button>
+          <div class="topbar-center">
+            <div class="orie-avatar-top" aria-hidden="true">
+              <div class="orie-svg orie-svg--sm"></div>
+            </div>
+            <div>
+              <p class="ia-name-top">Orie</p>
+              <p class="ia-status-top">Assistente da Orienta · Online</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="chat-area" id="chat-area">
+          <!-- Suggested questions -->
+          <div class="chat-suggestions" id="chat-suggestions">
+            <p class="suggestions-label">Perguntas frequentes</p>
+            <div class="suggestion-chips">
+              <button
+                class="chip"
+                onclick="sendSuggestion(this, 'Posso plantar nesta área?')"
+              >
+                Posso plantar nesta área?
+              </button>
+              <button
+                class="chip"
+                onclick="
+                  sendSuggestion(this, 'Minha reserva legal está correta?')
+                "
+              >
+                Minha reserva legal está correta?
+              </button>
+              <button
+                class="chip"
+                onclick="
+                  sendSuggestion(this, 'Existe alguma pendência ambiental?')
+                "
+              >
+                Existe alguma pendência?
+              </button>
+              <button
+                class="chip"
+                onclick="
+                  sendSuggestion(this, 'E se eu ampliar a área de cultivo?')
+                "
+              >
+                E se eu ampliar o cultivo?
+              </button>
+              <button
+                class="chip"
+                onclick="
+                  sendSuggestion(
+                    this,
+                    'O que preciso fazer para regularizar minha situação?',
+                  )
+                "
+              >
+                Como regularizar minha situação?
+              </button>
+            </div>
+          </div>
+
+          <!-- Initial AI message -->
+          <div class="chat-msg ai" id="initial-msg">
+            <div class="msg-avatar">🌿</div>
+            <div class="msg-bubble">
+              <p>Olá, Seu Raimundo! Bom dia! 👋</p>
+              <p>
+                Sou o seu assistente do Orienta. Já analisei as informações da
+                sua propriedade, a Fazenda São João, e estou aqui pra te ajudar
+                a entender tudo de forma simples.
+              </p>
+              <p>
+                Pode me perguntar o que quiser — sem termos difíceis, sem
+                juridiquês. Bora conferir sua situação juntos?
+              </p>
+              <div class="msg-actions">
+                <button
+                  class="btn-listen"
+                  onclick="
+                    speakText(
+                      this,
+                      'Olá, Seu Raimundo! Bom dia! Sou o seu assistente do Orienta. Já analisei as informações da sua propriedade e estou aqui pra te ajudar. Pode me perguntar o que quiser.',
+                    )
+                  "
+                >
+                  <svg
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
+                    <path d="M19.07 4.93a10 10 0 0 1 0 14.14" />
+                    <path d="M15.54 8.46a5 5 0 0 1 0 7.07" />
+                  </svg>
+                  Ouvir resposta
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="chat-input-area">
+          <button
+            class="btn-attach"
+            onclick="simulateImageUpload()"
+            title="Enviar foto"
+          >
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <rect x="3" y="3" width="18" height="18" rx="2" />
+              <circle cx="8.5" cy="8.5" r="1.5" />
+              <polyline points="21 15 16 10 5 21" />
+            </svg>
+          </button>
+          <button
+            class="btn-attach"
+            id="btn-voice"
+            onclick="startVoiceInput()"
+            title="Falar no chat"
+            style="color: #3a8c68"
+          >
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z" />
+              <path d="M19 10v2a7 7 0 0 1-14 0v-2" />
+              <line x1="12" y1="19" x2="12" y2="23" />
+              <line x1="8" y1="23" x2="16" y2="23" />
+            </svg>
+          </button>
+          <input
+            type="text"
+            class="chat-input"
+            id="chat-input"
+            placeholder="Pergunte alguma coisa..."
+            onkeydown="if (event.key === 'Enter') sendMessage();"
+          />
+          <button class="btn-send" onclick="sendMessage()">
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="white"
+              stroke-width="2.5"
+            >
+              <line x1="22" y1="2" x2="11" y2="13" />
+              <polygon points="22 2 15 22 11 13 2 9 22 2" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- SCREEN: MEU IMÓVEL -->
+      <div class="screen" id="screen-imovel">
+        <div class="topbar">
+          <button class="btn-back" onclick="goBack()">
+            <svg
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.2"
+            >
+              <path d="M19 12H5M12 5l-7 7 7 7" />
+            </svg>
+          </button>
+          <span>Meu Imóvel</span>
+          <button class="btn-icon" onclick="showScreen('screen-mapa')">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6" />
+            </svg>
+          </button>
+        </div>
+        <div class="content-scroll pad-top-topbar">
+          <div class="imovel-hero">
+            <div class="imovel-map-preview" onclick="showScreen('screen-mapa')">
+              <div class="map-svg-container">
+                <!-- Improved property map SVG with better colors -->
+                <svg
+                  viewBox="0 0 300 200"
+                  xmlns="http://www.w3.org/2000/svg"
+                  style="width: 100%; height: 100%"
+                >
+                  <defs>
+                    <linearGradient
+                      id="terrainSmall"
+                      x1="0%"
+                      y1="0%"
+                      x2="100%"
+                      y2="100%"
+                    >
+                      <stop
+                        offset="0%"
+                        style="stop-color: #9dc06a; stop-opacity: 1"
+                      />
+                      <stop
+                        offset="100%"
+                        style="stop-color: #7aad5a; stop-opacity: 1"
+                      />
+                    </linearGradient>
+                    <linearGradient
+                      id="cultSmall"
+                      x1="0%"
+                      y1="0%"
+                      x2="100%"
+                      y2="100%"
+                    >
+                      <stop
+                        offset="0%"
+                        style="stop-color: #e8f5c0; stop-opacity: 1"
+                      />
+                      <stop
+                        offset="100%"
+                        style="stop-color: #d4eda0; stop-opacity: 1"
+                      />
+                    </linearGradient>
+                    <linearGradient
+                      id="reserveSmall"
+                      x1="0%"
+                      y1="0%"
+                      x2="100%"
+                      y2="100%"
+                    >
+                      <stop
+                        offset="0%"
+                        style="stop-color: #4caf50; stop-opacity: 1"
+                      />
+                      <stop
+                        offset="100%"
+                        style="stop-color: #2e7d32; stop-opacity: 1"
+                      />
+                    </linearGradient>
+                  </defs>
+                  <rect width="300" height="200" fill="url(#terrainSmall)" />
+                  <polygon
+                    points="40,30 260,25 270,170 30,175"
+                    fill="none"
+                    stroke="#1B5E20"
+                    stroke-width="2.5"
+                    stroke-dasharray="8,4"
+                  />
+                  <polygon
+                    points="42,32 258,27 265,165 32,170"
+                    fill="url(#cultSmall)"
+                    stroke="#8BC34A"
+                    stroke-width="1"
+                  />
+                  <path
+                    d="M0,140 Q40,130 80,145 Q120,158 160,148 Q200,138 240,150 Q270,158 300,145"
+                    stroke="#1565C0"
+                    stroke-width="4"
+                    fill="none"
+                    opacity="0.9"
+                  />
+                  <path
+                    d="M0,115 Q40,105 80,120 Q120,133 160,123 Q200,113 240,125 Q270,133 300,120 L300,145 Q270,158 240,150 Q200,138 160,148 Q120,158 80,145 Q40,130 0,140Z"
+                    fill="#42A5F5"
+                    opacity="0.35"
+                    stroke="#1565C0"
+                    stroke-width="1"
+                  />
+                  <ellipse
+                    cx="200"
+                    cy="80"
+                    rx="55"
+                    ry="45"
+                    fill="url(#reserveSmall)"
+                    stroke="#1B5E20"
+                    stroke-width="2"
+                    stroke-dasharray="6,3"
+                  />
+                  <circle cx="180" cy="70" r="4" fill="#1B5E20" opacity="0.4" />
+                  <circle
+                    cx="210"
+                    cy="85"
+                    r="3"
+                    fill="#1B5E20"
+                    opacity="0.35"
+                  />
+                  <circle
+                    cx="220"
+                    cy="75"
+                    r="3.5"
+                    fill="#1B5E20"
+                    opacity="0.4"
+                  />
+                  <rect
+                    x="175"
+                    y="70"
+                    width="50"
+                    height="20"
+                    rx="3"
+                    fill="rgba(255,255,255,0.85)"
+                  />
+                  <text
+                    x="200"
+                    y="82"
+                    font-size="9"
+                    fill="#1B5E20"
+                    font-family="Inter,sans-serif"
+                    text-anchor="middle"
+                    font-weight="600"
+                  >
+                    Reserva
+                  </text>
+                  <text
+                    x="200"
+                    y="92"
+                    font-size="8"
+                    fill="#2E7D32"
+                    font-family="Inter,sans-serif"
+                    text-anchor="middle"
+                  >
+                    Legal
+                  </text>
+                  <rect
+                    x="55"
+                    y="148"
+                    width="50"
+                    height="16"
+                    rx="2"
+                    fill="rgba(21,101,192,0.15)"
+                  />
+                  <text
+                    x="80"
+                    y="158"
+                    font-size="7"
+                    fill="#0D47A1"
+                    font-family="Inter,sans-serif"
+                    text-anchor="middle"
+                    font-weight="600"
+                  >
+                    APP
+                  </text>
+                  <rect
+                    x="80"
+                    y="45"
+                    width="60"
+                    height="18"
+                    rx="2"
+                    fill="rgba(255,255,255,0.8)"
+                  />
+                  <text
+                    x="110"
+                    y="56"
+                    font-size="9"
+                    fill="#558B2F"
+                    font-family="Inter,sans-serif"
+                    text-anchor="middle"
+                    font-weight="600"
+                  >
+                    Cultivo
+                  </text>
+                  <circle
+                    cx="268"
+                    cy="32"
+                    r="14"
+                    fill="white"
+                    opacity="0.9"
+                    stroke="#BDBDBD"
+                    stroke-width="1"
+                  />
+                  <polygon
+                    points="268,20 266,28 268,25 270,28"
+                    fill="#C62828"
+                  />
+                  <text
+                    x="268"
+                    y="29"
+                    font-size="9"
+                    fill="#C62828"
+                    text-anchor="middle"
+                    font-family="Inter,sans-serif"
+                    font-weight="700"
+                  >
+                    N
+                  </text>
+                </svg>
+              </div>
+              <div class="map-tap-hint">Toque para ver o mapa completo →</div>
+            </div>
+          </div>
+
+          <div class="imovel-info-card">
+            <h3 class="imovel-nome">Fazenda São João</h3>
+            <p class="imovel-car">CAR: BA-2910800-3B5A2C1D</p>
+            <div class="imovel-stats">
+              <div class="imovel-stat">
+                <span class="istat-val">245 ha</span
+                ><span class="istat-lbl">Área total</span>
+              </div>
+              <div class="istat-div"></div>
+              <div class="imovel-stat">
+                <span class="istat-val">48 ha</span
+                ><span class="istat-lbl">Reserva Legal</span>
+              </div>
+              <div class="istat-div"></div>
+              <div class="imovel-stat">
+                <span class="istat-val">12 ha</span
+                ><span class="istat-lbl">APP</span>
+              </div>
+            </div>
+          </div>
+
+          <h3
+            class="section-label"
+            style="color: var(--text); font-weight: 700"
+          >
+            Situação das áreas
+          </h3>
+          <div class="area-items">
+            <div
+              class="area-item"
+              onclick="showAreaDetail('app')"
+              style="border-left: 4px solid #ef4444; background: #2b0b0b"
+            >
+              <div class="area-item-icon" style="background: #e3f2fd">💧</div>
+              <div class="area-item-body">
+                <p class="area-item-title">
+                  Área de Preservação Permanente (APP)
+                </p>
+                <p class="area-item-sub warn-text">
+                  ⚠ Requer atenção — próxima ao córrego
+                </p>
+                <span class="risk-badge high">🔴 Alto risco</span>
+              </div>
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#999"
+                stroke-width="2"
+              >
+                <path d="M9 18l6-6-6-6" />
+              </svg>
+            </div>
+            <div
+              class="area-item"
+              onclick="showAreaDetail('rl')"
+              style="border-left: 4px solid #3fb950; background: #0d2119"
+            >
+              <div class="area-item-icon" style="background: #e8f5e9">🌿</div>
+              <div class="area-item-body">
+                <p class="area-item-title">Reserva Legal</p>
+                <p class="area-item-sub ok-text">✓ Compatível com legislação</p>
+                <span class="risk-badge low">🟢 Baixo risco</span>
+              </div>
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#999"
+                stroke-width="2"
+              >
+                <path d="M9 18l6-6-6-6" />
+              </svg>
+            </div>
+            <div
+              class="area-item"
+              onclick="showAreaDetail('veg')"
+              style="border-left: 4px solid #3fb950; background: #0d2119"
+            >
+              <div class="area-item-icon" style="background: #f1f8e9">🌲</div>
+              <div class="area-item-body">
+                <p class="area-item-title">Vegetação Nativa</p>
+                <p class="area-item-sub ok-text">✓ 62 ha identificados</p>
+                <span class="risk-badge low">🟢 Baixo risco</span>
+              </div>
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#999"
+                stroke-width="2"
+              >
+                <path d="M9 18l6-6-6-6" />
+              </svg>
+            </div>
+            <div
+              class="area-item"
+              onclick="showAreaDetail('cad')"
+              style="border-left: 4px solid #3fb950; background: #0d2119"
+            >
+              <div class="area-item-icon" style="background: #fff8e1">📋</div>
+              <div class="area-item-body">
+                <p class="area-item-title">Situação Cadastral</p>
+                <p class="area-item-sub ok-text">✓ CAR identificado e ativo</p>
+                <span class="risk-badge low">🟢 Baixo risco</span>
+              </div>
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#999"
+                stroke-width="2"
+              >
+                <path d="M9 18l6-6-6-6" />
+              </svg>
+            </div>
+          </div>
+          <button class="btn-outline-full" onclick="showScreen('screen-ia')">
+            💬 Perguntar para a IA sobre meu imóvel
+          </button>
+          <div style="height: 30px"></div>
+        </div>
+      </div>
+
+      <!-- SCREEN: MAPA -->
+      <div class="screen" id="screen-mapa">
+        <div class="topbar">
+          <button class="btn-back" onclick="goBack()" aria-label="Voltar">
+            <svg
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.2"
+            >
+              <path d="M19 12H5M12 5l-7 7 7 7" />
+            </svg>
+          </button>
+          <span>Mapa da Propriedade</span>
+          <button
+            class="btn-icon"
+            onclick="openMapHelp()"
+            aria-label="Ajuda do mapa"
+            title="Ajuda"
+          >
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <circle cx="12" cy="12" r="10" />
+              <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+              <line x1="12" y1="17" x2="12.01" y2="17" />
+            </svg>
+          </button>
+        </div>
+        <div class="mapa-full" id="mapa-full" style="background: #8fbc6a">
+          <svg
+            viewBox="0 0 360 520"
+            xmlns="http://www.w3.org/2000/svg"
+            style="width: 100%; height: 100%"
+            id="property-map"
+          >
+            <defs>
+              <!-- Terrain texture gradient -->
+              <linearGradient
+                id="terrainGrad"
+                x1="0%"
+                y1="0%"
+                x2="100%"
+                y2="100%"
+              >
+                <stop
+                  offset="0%"
+                  style="stop-color: #9dc06a; stop-opacity: 1"
+                />
+                <stop
+                  offset="40%"
+                  style="stop-color: #8fbc6a; stop-opacity: 1"
+                />
+                <stop
+                  offset="100%"
+                  style="stop-color: #7aad5a; stop-opacity: 1"
+                />
+              </linearGradient>
+              <!-- Cultivation texture -->
+              <linearGradient id="cultGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop
+                  offset="0%"
+                  style="stop-color: #e8f5c0; stop-opacity: 1"
+                />
+                <stop
+                  offset="100%"
+                  style="stop-color: #d4eda0; stop-opacity: 1"
+                />
+              </linearGradient>
+              <!-- Reserve gradient -->
+              <linearGradient
+                id="reserveGrad"
+                x1="0%"
+                y1="0%"
+                x2="100%"
+                y2="100%"
+              >
+                <stop
+                  offset="0%"
+                  style="stop-color: #4caf50; stop-opacity: 1"
+                />
+                <stop
+                  offset="100%"
+                  style="stop-color: #388e3c; stop-opacity: 1"
+                />
+              </linearGradient>
+              <!-- APP gradient -->
+              <linearGradient id="appGrad" x1="0%" y1="100%" x2="0%" y2="0%">
+                <stop
+                  offset="0%"
+                  style="stop-color: #1565c0; stop-opacity: 0.3"
+                />
+                <stop
+                  offset="100%"
+                  style="stop-color: #42a5f5; stop-opacity: 0.2"
+                />
+              </linearGradient>
+              <!-- Water gradient -->
+              <linearGradient id="waterGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" style="stop-color: #1976d2" />
+                <stop offset="50%" style="stop-color: #1565c0" />
+                <stop offset="100%" style="stop-color: #1976d2" />
+              </linearGradient>
+              <!-- Shadow filter -->
+              <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+                <feDropShadow
+                  dx="1"
+                  dy="2"
+                  stdDeviation="2"
+                  flood-color="rgba(0,0,0,0.2)"
+                />
+              </filter>
+              <!-- Topographic pattern -->
+              <pattern
+                id="topoPattern"
+                x="0"
+                y="0"
+                width="40"
+                height="40"
+                patternUnits="userSpaceOnUse"
+              >
+                <path
+                  d="M0,20 Q10,15 20,20 Q30,25 40,20"
+                  stroke="rgba(255,255,255,0.12)"
+                  stroke-width="0.8"
+                  fill="none"
+                />
+                <path
+                  d="M0,30 Q10,25 20,30 Q30,35 40,30"
+                  stroke="rgba(255,255,255,0.08)"
+                  stroke-width="0.8"
+                  fill="none"
+                />
+              </pattern>
+              <!-- Cultivation row pattern -->
+              <pattern
+                id="cultPattern"
+                x="0"
+                y="0"
+                width="12"
+                height="12"
+                patternUnits="userSpaceOnUse"
+                patternTransform="rotate(15)"
+              >
+                <line
+                  x1="0"
+                  y1="6"
+                  x2="12"
+                  y2="6"
+                  stroke="rgba(139,195,74,0.4)"
+                  stroke-width="1.5"
+                />
+              </pattern>
+              <!-- Forest pattern -->
+              <pattern
+                id="forestPattern"
+                x="0"
+                y="0"
+                width="16"
+                height="16"
+                patternUnits="userSpaceOnUse"
+              >
+                <circle cx="4" cy="4" r="3" fill="rgba(27,94,32,0.25)" />
+                <circle cx="12" cy="12" r="3" fill="rgba(27,94,32,0.2)" />
+                <circle cx="12" cy="4" r="2" fill="rgba(27,94,32,0.15)" />
+                <circle cx="4" cy="12" r="2" fill="rgba(27,94,32,0.15)" />
+              </pattern>
+            </defs>
+
+            <!-- === BASE TERRAIN === -->
+            <rect width="360" height="520" fill="url(#terrainGrad)" />
+            <!-- Topographic overlay -->
+            <rect width="360" height="520" fill="url(#topoPattern)" />
+
+            <!-- === TOPOGRAPHIC CONTOUR LINES (subtle) === -->
+            <path
+              d="M0,100 Q90,85 180,95 Q270,105 360,90"
+              stroke="rgba(255,255,255,0.15)"
+              stroke-width="1"
+              fill="none"
+            />
+            <path
+              d="M0,160 Q90,145 180,158 Q270,170 360,155"
+              stroke="rgba(255,255,255,0.12)"
+              stroke-width="1"
+              fill="none"
+            />
+            <path
+              d="M0,220 Q90,208 180,218 Q270,228 360,215"
+              stroke="rgba(255,255,255,0.12)"
+              stroke-width="1"
+              fill="none"
+            />
+            <path
+              d="M0,280 Q90,268 180,278 Q270,290 360,275"
+              stroke="rgba(255,255,255,0.1)"
+              stroke-width="1"
+              fill="none"
+            />
+            <path
+              d="M0,340 Q90,328 180,338 Q270,350 360,335"
+              stroke="rgba(255,255,255,0.1)"
+              stroke-width="1"
+              fill="none"
+            />
+
+            <!-- === PROPERTY BOUNDARY (main polygon) === -->
+            <!-- Outer shadow/border -->
+            <polygon
+              points="28,58 332,48 342,462 18,467"
+              fill="none"
+              stroke="rgba(0,0,0,0.25)"
+              stroke-width="5"
+            />
+            <!-- Main boundary -->
+            <polygon
+              points="30,60 330,50 340,460 20,465"
+              fill="none"
+              stroke="#1B5E20"
+              stroke-width="3"
+              stroke-dasharray="12,5"
+              id="map-boundary"
+              class="map-area"
+              data-area="boundary"
+              style="cursor: pointer"
+              aria-label="Limite da propriedade"
+              role="button"
+              tabindex="0"
+            />
+            <!-- Inner boundary glow -->
+            <polygon
+              points="30,60 330,50 340,460 20,465"
+              fill="none"
+              stroke="rgba(76,175,80,0.4)"
+              stroke-width="1.5"
+            />
+
+            <!-- === CULTIVATION AREA === -->
+            <polygon
+              points="35,65 240,55 245,265 35,275"
+              fill="url(#cultGrad)"
+              stroke="none"
+              id="map-cult"
+              class="map-area"
+              data-area="cult"
+              style="cursor: pointer"
+              aria-label="Área de cultivo"
+              role="button"
+              tabindex="0"
+            />
+            <!-- Cultivation row texture -->
+            <polygon
+              points="35,65 240,55 245,265 35,275"
+              fill="url(#cultPattern)"
+              stroke="none"
+            />
+            <!-- Cultivation border -->
+            <polygon
+              points="35,65 240,55 245,265 35,275"
+              fill="none"
+              stroke="#8BC34A"
+              stroke-width="1.5"
+              stroke-dasharray="6,4"
+            />
+
+            <!-- === LEGAL RESERVE (forest area) === -->
+            <!-- Reserve base -->
+            <ellipse
+              cx="255"
+              cy="175"
+              rx="78"
+              ry="88"
+              fill="#2E7D32"
+              opacity="0.85"
+              id="map-rl"
+              class="map-area"
+              data-area="rl"
+              style="cursor: pointer"
+              aria-label="Reserva Legal"
+              role="button"
+              tabindex="0"
+            />
+            <!-- Forest texture overlay -->
+            <ellipse
+              cx="255"
+              cy="175"
+              rx="78"
+              ry="88"
+              fill="url(#forestPattern)"
+            />
+            <!-- Reserve border -->
+            <ellipse
+              cx="255"
+              cy="175"
+              rx="78"
+              ry="88"
+              fill="none"
+              stroke="#1B5E20"
+              stroke-width="2.5"
+              stroke-dasharray="10,5"
+            />
+            <!-- Inner highlight -->
+            <ellipse
+              cx="255"
+              cy="175"
+              rx="78"
+              ry="88"
+              fill="none"
+              stroke="rgba(129,199,132,0.5)"
+              stroke-width="1"
+            />
+
+            <!-- === APP ZONE (riparian buffer) === -->
+            <!-- APP buffer area -->
+            <path
+              d="M0,310 Q60,292 120,308 Q180,325 240,312 Q300,298 360,314 L360,395 Q300,378 240,392 Q180,408 120,390 Q60,372 0,388Z"
+              fill="url(#appGrad)"
+              stroke="none"
+              id="map-app"
+              class="map-area"
+              data-area="app"
+              style="cursor: pointer"
+              aria-label="Área de Preservação Permanente"
+              role="button"
+              tabindex="0"
+            />
+            <!-- APP border top -->
+            <path
+              d="M0,310 Q60,292 120,308 Q180,325 240,312 Q300,298 360,314"
+              stroke="#1565C0"
+              stroke-width="1.5"
+              stroke-dasharray="8,4"
+              fill="none"
+              opacity="0.7"
+            />
+
+            <!-- === WATER STREAM (Córrego São João) === -->
+            <!-- River shadow/depth -->
+            <path
+              d="M0,388 Q60,372 120,390 Q180,408 240,392 Q300,378 360,395"
+              stroke="#0D47A1"
+              stroke-width="9"
+              fill="none"
+              opacity="0.3"
+              id="map-water"
+              class="map-area"
+              data-area="water"
+              style="cursor: pointer"
+              aria-label="Curso d'água (Córrego São João)"
+              role="button"
+              tabindex="0"
+            />
+            <!-- River main -->
+            <path
+              d="M0,388 Q60,372 120,390 Q180,408 240,392 Q300,378 360,395"
+              stroke="url(#waterGrad)"
+              stroke-width="6"
+              fill="none"
+              opacity="0.95"
+            />
+            <!-- River highlight -->
+            <path
+              d="M0,386 Q60,370 120,388 Q180,406 240,390 Q300,376 360,393"
+              stroke="rgba(144,202,249,0.6)"
+              stroke-width="2"
+              fill="none"
+            />
+
+            <!-- === VEGETATION DOTS (forest texture in reserve) === -->
+            <circle cx="220" cy="140" r="5" fill="#1B5E20" opacity="0.6" />
+            <circle cx="240" cy="155" r="4" fill="#2E7D32" opacity="0.5" />
+            <circle cx="260" cy="145" r="6" fill="#1B5E20" opacity="0.55" />
+            <circle cx="280" cy="160" r="4" fill="#2E7D32" opacity="0.5" />
+            <circle cx="230" cy="175" r="5" fill="#1B5E20" opacity="0.6" />
+            <circle cx="255" cy="185" r="7" fill="#1B5E20" opacity="0.5" />
+            <circle cx="275" cy="195" r="5" fill="#2E7D32" opacity="0.55" />
+            <circle cx="245" cy="205" r="4" fill="#1B5E20" opacity="0.5" />
+            <circle cx="265" cy="215" r="6" fill="#2E7D32" opacity="0.5" />
+            <circle cx="285" cy="175" r="5" fill="#1B5E20" opacity="0.6" />
+            <circle cx="300" cy="190" r="4" fill="#2E7D32" opacity="0.5" />
+            <circle cx="220" cy="200" r="5" fill="#1B5E20" opacity="0.55" />
+            <circle cx="240" cy="220" r="4" fill="#2E7D32" opacity="0.5" />
+
+            <!-- === LABELS === -->
+            <!-- Cultivation label -->
+            <rect
+              x="48"
+              y="148"
+              width="130"
+              height="38"
+              rx="6"
+              fill="rgba(255,255,255,0.82)"
+            />
+            <text
+              x="113"
+              y="165"
+              font-size="12"
+              fill="#33691E"
+              font-family="Inter,sans-serif"
+              font-weight="700"
+              text-anchor="middle"
+            >
+              Área de Cultivo
+            </text>
+            <text
+              x="113"
+              y="180"
+              font-size="10"
+              fill="#558B2F"
+              font-family="Inter,sans-serif"
+              text-anchor="middle"
+            >
+              185 ha • Toque para saber mais
+            </text>
+
+            <!-- Reserve label -->
+            <rect
+              x="198"
+              y="162"
+              width="116"
+              height="40"
+              rx="6"
+              fill="rgba(255,255,255,0.88)"
+            />
+            <text
+              x="256"
+              y="178"
+              font-size="11"
+              fill="#1B5E20"
+              font-family="Inter,sans-serif"
+              text-anchor="middle"
+              font-weight="700"
+            >
+              Reserva Legal
+            </text>
+            <text
+              x="256"
+              y="193"
+              font-size="10"
+              fill="#2E7D32"
+              font-family="Inter,sans-serif"
+              text-anchor="middle"
+            >
+              48 ha ✓ Compatível
+            </text>
+
+            <!-- APP label -->
+            <rect
+              x="88"
+              y="318"
+              width="184"
+              height="38"
+              rx="6"
+              fill="rgba(21,101,192,0.15)"
+              stroke="rgba(21,101,192,0.4)"
+              stroke-width="1"
+            />
+            <text
+              x="180"
+              y="334"
+              font-size="11"
+              fill="#0D47A1"
+              font-family="Inter,sans-serif"
+              text-anchor="middle"
+              font-weight="700"
+            >
+              APP — Córrego São João
+            </text>
+            <text
+              x="180"
+              y="349"
+              font-size="10"
+              fill="#1565C0"
+              font-family="Inter,sans-serif"
+              text-anchor="middle"
+            >
+              12 ha ⚠ Requer atenção
+            </text>
+
+            <!-- Water label -->
+            <rect
+              x="60"
+              y="396"
+              width="140"
+              height="22"
+              rx="5"
+              fill="rgba(13,71,161,0.12)"
+            />
+            <text
+              x="130"
+              y="411"
+              font-size="10"
+              fill="#1565C0"
+              font-family="Inter,sans-serif"
+              text-anchor="middle"
+              font-weight="600"
+            >
+              ≈ Córrego São João
+            </text>
+
+            <!-- Boundary label (top) -->
+            <rect
+              x="95"
+              y="52"
+              width="170"
+              height="20"
+              rx="4"
+              fill="rgba(27,94,32,0.12)"
+            />
+            <text
+              x="180"
+              y="65"
+              font-size="10"
+              fill="#1B5E20"
+              font-family="Inter,sans-serif"
+              text-anchor="middle"
+              font-weight="600"
+            >
+              Fazenda São João — 245 ha
+            </text>
+
+            <!-- === COMPASS ROSE === -->
+            <circle
+              cx="320"
+              cy="85"
+              r="26"
+              fill="rgba(255,255,255,0.92)"
+              filter="url(#shadow)"
+            />
+            <circle
+              cx="320"
+              cy="85"
+              r="24"
+              fill="none"
+              stroke="#BDBDBD"
+              stroke-width="1"
+            />
+            <!-- N arrow -->
+            <polygon points="320,64 316,80 320,77 324,80" fill="#C62828" />
+            <polygon points="320,77 316,80 320,106 324,80" fill="#424242" />
+            <!-- Cardinal letters -->
+            <text
+              x="320"
+              y="62"
+              font-size="9"
+              fill="#C62828"
+              text-anchor="middle"
+              font-family="Inter,sans-serif"
+              font-weight="800"
+            >
+              N
+            </text>
+            <text
+              x="320"
+              y="112"
+              font-size="8"
+              fill="#424242"
+              text-anchor="middle"
+              font-family="Inter,sans-serif"
+              font-weight="600"
+            >
+              S
+            </text>
+            <text
+              x="298"
+              y="89"
+              font-size="8"
+              fill="#424242"
+              text-anchor="middle"
+              font-family="Inter,sans-serif"
+              font-weight="600"
+            >
+              O
+            </text>
+            <text
+              x="342"
+              y="89"
+              font-size="8"
+              fill="#424242"
+              text-anchor="middle"
+              font-family="Inter,sans-serif"
+              font-weight="600"
+            >
+              L
+            </text>
+            <!-- Center dot -->
+            <circle cx="320" cy="85" r="3" fill="#424242" />
+
+            <!-- === SCALE BAR === -->
+            <rect
+              x="20"
+              y="480"
+              width="80"
+              height="4"
+              rx="2"
+              fill="#1B5E20"
+              opacity="0.7"
+            />
+            <rect
+              x="60"
+              y="480"
+              width="2"
+              height="8"
+              fill="#1B5E20"
+              opacity="0.7"
+            />
+            <rect
+              x="20"
+              y="480"
+              width="2"
+              height="8"
+              fill="#1B5E20"
+              opacity="0.7"
+            />
+            <rect
+              x="100"
+              y="480"
+              width="2"
+              height="8"
+              fill="#1B5E20"
+              opacity="0.7"
+            />
+            <text
+              x="20"
+              y="496"
+              font-size="9"
+              fill="#1B5E20"
+              font-family="Inter,sans-serif"
+              opacity="0.8"
+            >
+              0
+            </text>
+            <text
+              x="52"
+              y="496"
+              font-size="9"
+              fill="#1B5E20"
+              font-family="Inter,sans-serif"
+              opacity="0.8"
+              text-anchor="middle"
+            >
+              500m
+            </text>
+            <text
+              x="100"
+              y="496"
+              font-size="9"
+              fill="#1B5E20"
+              font-family="Inter,sans-serif"
+              opacity="0.8"
+              text-anchor="end"
+            >
+              1km
+            </text>
+
+            <!-- === GRID LINES (subtle) === -->
+            <line
+              x1="90"
+              y1="0"
+              x2="90"
+              y2="520"
+              stroke="rgba(255,255,255,0.06)"
+              stroke-width="1"
+            />
+            <line
+              x1="180"
+              y1="0"
+              x2="180"
+              y2="520"
+              stroke="rgba(255,255,255,0.06)"
+              stroke-width="1"
+            />
+            <line
+              x1="270"
+              y1="0"
+              x2="270"
+              y2="520"
+              stroke="rgba(255,255,255,0.06)"
+              stroke-width="1"
+            />
+            <line
+              x1="0"
+              y1="130"
+              x2="360"
+              y2="130"
+              stroke="rgba(255,255,255,0.06)"
+              stroke-width="1"
+            />
+            <line
+              x1="0"
+              y1="260"
+              x2="360"
+              y2="260"
+              stroke="rgba(255,255,255,0.06)"
+              stroke-width="1"
+            />
+            <line
+              x1="0"
+              y1="390"
+              x2="360"
+              y2="390"
+              stroke="rgba(255,255,255,0.06)"
+              stroke-width="1"
+            />
+
+            <!-- === OVERLAY ICONS (pins clicáveis) === -->
+            <g id="map-overlay-icons">
+              <!-- Pin: Área de Cultivo -->
+              <g
+                class="map-pin"
+                data-area="cult"
+                role="button"
+                tabindex="0"
+                aria-label="Toque para ver a área de cultivo"
+              >
+                <circle
+                  cx="140"
+                  cy="200"
+                  r="18"
+                  fill="#FFFFFF"
+                  stroke="#8BC34A"
+                  stroke-width="2.5"
+                  opacity="0.95"
+                />
+                <text
+                  x="140"
+                  y="207"
+                  font-size="20"
+                  text-anchor="middle"
+                  pointer-events="none"
+                >🌱</text>
+              </g>
+
+              <!-- Pin: Reserva Legal -->
+              <g
+                class="map-pin"
+                data-area="rl"
+                role="button"
+                tabindex="0"
+                aria-label="Toque para ver a Reserva Legal"
+              >
+                <circle
+                  cx="255"
+                  cy="120"
+                  r="18"
+                  fill="#FFFFFF"
+                  stroke="#1B5E20"
+                  stroke-width="2.5"
+                  opacity="0.95"
+                />
+                <text
+                  x="255"
+                  y="127"
+                  font-size="20"
+                  text-anchor="middle"
+                  pointer-events="none"
+                >🌳</text>
+              </g>
+
+              <!-- Pin: APP (Córrego São João) -->
+              <g
+                class="map-pin"
+                data-area="app"
+                role="button"
+                tabindex="0"
+                aria-label="Toque para ver a Área de Preservação Permanente"
+              >
+                <circle
+                  cx="80"
+                  cy="355"
+                  r="18"
+                  fill="#FFFFFF"
+                  stroke="#1565C0"
+                  stroke-width="2.5"
+                  opacity="0.95"
+                />
+                <text
+                  x="80"
+                  y="362"
+                  font-size="20"
+                  text-anchor="middle"
+                  pointer-events="none"
+                >💧</text>
+              </g>
+
+              <!-- Pin de alerta pulsante (sobre APP) -->
+              <g
+                class="map-pin map-pin--alert"
+                data-area="app"
+                role="button"
+                tabindex="0"
+                aria-label="Atenção: APP requer cuidado"
+              >
+                <circle
+                  cx="80"
+                  cy="355"
+                  r="26"
+                  fill="rgba(220,38,38,0.18)"
+                  stroke="#DC2626"
+                  stroke-width="2"
+                />
+                <text
+                  x="80"
+                  y="349"
+                  font-size="16"
+                  font-weight="700"
+                  fill="#B91C1C"
+                  text-anchor="middle"
+                  pointer-events="none"
+                >⚠</text>
+                <text
+                  x="80"
+                  y="364"
+                  font-size="9"
+                  font-weight="700"
+                  fill="#B91C1C"
+                  text-anchor="middle"
+                  pointer-events="none"
+                >ATENÇÃO</text>
+              </g>
+
+              <!-- Pin: Curso d'água -->
+              <g
+                class="map-pin"
+                data-area="water"
+                role="button"
+                tabindex="0"
+                aria-label="Toque para ver o curso d'água"
+              >
+                <circle
+                  cx="290"
+                  cy="395"
+                  r="16"
+                  fill="#FFFFFF"
+                  stroke="#0D47A1"
+                  stroke-width="2.5"
+                  opacity="0.95"
+                />
+                <text
+                  x="290"
+                  y="402"
+                  font-size="18"
+                  text-anchor="middle"
+                  pointer-events="none"
+                >💧</text>
+              </g>
+
+              <!-- Pin: Limite da propriedade (topo) -->
+              <g
+                class="map-pin"
+                data-area="boundary"
+                role="button"
+                tabindex="0"
+                aria-label="Toque para ver o limite da propriedade"
+              >
+                <circle
+                  cx="180"
+                  cy="38"
+                  r="14"
+                  fill="#FFFFFF"
+                  stroke="#1B5E20"
+                  stroke-width="2"
+                  opacity="0.95"
+                />
+                <text
+                  x="180"
+                  y="44"
+                  font-size="14"
+                  text-anchor="middle"
+                  pointer-events="none"
+                >📍</text>
+              </g>
+            </g>
+          </svg>
+
+          <!-- Coluna de FABs à direita -->
+          <div id="map-fabs" aria-label="Ações rápidas do mapa">
+            <button
+              class="map-fab"
+              id="map-fab-audio"
+              onclick="toggleMapAudioGuide()"
+              aria-label="Narrar áreas do mapa"
+              title="Narrar mapa"
+            >
+              🔊
+            </button>
+            <button
+              class="map-fab"
+              onclick="clearMapSelection()"
+              aria-label="Centralizar mapa"
+              title="Centralizar"
+            >
+              🎯
+            </button>
+            <button
+              class="map-fab"
+              onclick="showToast('🧭 Norte no topo')"
+              aria-label="Orientação norte"
+              title="Bússola"
+            >
+              🧭
+            </button>
+            <button
+              class="map-fab"
+              onclick="showToast('📍 Use o GPS do celular')"
+              aria-label="Minha localização"
+              title="Minha localização"
+            >
+              📍
+            </button>
+          </div>
+
+          <!-- FAB principal de ajuda (canto inferior direito) -->
+          <button
+            id="map-fab-help"
+            onclick="openMapHelp()"
+            aria-label="Perguntar para o Orienta"
+            title="Perguntar para Orienta"
+          >
+            ❓
+          </button>
+
+          <!-- Map legend -->
+          <div class="map-legend" role="region" aria-label="Legenda do mapa">
+            <div class="map-legend-header">
+              <span aria-hidden="true">🗺️</span>
+              <span>Toque numa área</span>
+            </div>
+            <div class="map-legend-item">
+              <button
+                onclick="openLegendInfo('free')"
+                aria-label="O que é Área Livre"
+              >
+                <span
+                  class="legend-color"
+                  style="background: #ecfdf5; border: 2px solid #10b981"
+                  aria-hidden="true"
+                ></span>
+                <span>🟢 Área livre</span>
+              </button>
+            </div>
+            <div class="map-legend-item">
+              <button
+                onclick="openLegendInfo('attention')"
+                aria-label="O que é Atenção"
+              >
+                <span
+                  class="legend-color"
+                  style="background: #fffbeb; border: 2px solid #f59e0b"
+                  aria-hidden="true"
+                ></span>
+                <span>🟡 Atenção</span>
+              </button>
+            </div>
+            <div class="map-legend-item">
+              <button
+                onclick="openLegendInfo('protected')"
+                aria-label="O que é Área protegida"
+              >
+                <span
+                  class="legend-color"
+                  style="background: #fef2f2; border: 2px solid #dc2626"
+                  aria-hidden="true"
+                ></span>
+                <span>🔴 Área protegida</span>
+              </button>
+            </div>
+            <div class="map-legend-item">
+              <button
+                onclick="openLegendInfo('water')"
+                aria-label="O que é Beira de rio"
+              >
+                <span
+                  class="legend-color"
+                  style="background: #e0f2fe; border: 2px solid #0ea5e9"
+                  aria-hidden="true"
+                ></span>
+                <span>🔵 Beira de rio</span>
+              </button>
+            </div>
+            <div class="map-legend-item">
+              <button
+                onclick="openLegendInfo('forest')"
+                aria-label="O que é Mato preservado"
+              >
+                <span
+                  class="legend-color"
+                  style="background: #dcfce7; border: 2px solid #16a34a"
+                  aria-hidden="true"
+                ></span>
+                <span>🌳 Mato preservado</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Painel contextual rico (substitui o map-info-panel antigo) -->
+          <div class="map-info-panel" id="map-panel" style="display: none">
+            <div class="map-panel-inner map-panel-context">
+              <button
+                class="map-panel-close"
+                onclick="clearMapSelection()"
+                aria-label="Fechar painel"
+              >
+                ✕
+              </button>
+
+              <div class="map-panel-status" id="map-panel-status">
+                <span id="map-panel-status-icon">🔴</span>
+                <span id="map-panel-status-text">Área Protegida</span>
+              </div>
+
+              <h3 class="map-panel-title" id="map-panel-title">
+                Beira protegida do rio
+              </h3>
+              <p
+                class="map-panel-title-tech"
+                id="map-panel-title-tech"
+              ></p>
+
+              <p class="map-panel-meaning" id="map-panel-meaning"></p>
+
+              <button
+                class="btn-listen btn-listen-block"
+                id="map-panel-listen"
+                onclick="speakMapPanel()"
+              >
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
+                  <path d="M19.07 4.93a10 10 0 0 1 0 14.14" />
+                  <path d="M15.54 8.46a5 5 0 0 1 0 7.07" />
+                </svg>
+                <span>Ouvir esta explicação</span>
+              </button>
+
+              <div id="map-panel-lists">
+                <p class="map-panel-section-title">✅ O que PODE fazer</p>
+                <ul class="map-panel-list map-panel-list--can" id="map-panel-can"></ul>
+
+                <p class="map-panel-section-title">❌ O que NÃO PODE</p>
+                <ul class="map-panel-list map-panel-list--cant" id="map-panel-cant"></ul>
+
+                <p class="map-panel-section-title" id="map-panel-cautions-title">
+                  ⚠ Atenção
+                </p>
+                <ul
+                  class="map-panel-list map-panel-list--caut"
+                  id="map-panel-cautions"
+                ></ul>
+              </div>
+
+              <p class="map-panel-section-title">💬 Perguntas rápidas</p>
+              <div
+                class="map-question-grid"
+                id="map-panel-questions"
+                role="group"
+                aria-label="Perguntas rápidas sobre esta área"
+              ></div>
+
+              <button
+                class="btn-simulator"
+                onclick="openMapSimulator()"
+                aria-label="Simular atividade nesta área"
+              >
+                <span aria-hidden="true">🧪</span>
+                <span>Simular atividade nesta área</span>
+              </button>
+
+              <button
+                class="btn-why"
+                onclick="openMapWhy()"
+                aria-label="Entender o motivo"
+              >
+                <span aria-hidden="true">🧠</span>
+                <span>Entender o motivo</span>
+              </button>
+
+              <button
+                class="btn-primary"
+                onclick="goToIaAboutArea()"
+                aria-label="Falar com Orienta sobre esta área"
+              >
+                💬 Falar com Orienta sobre isso
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Modal: perguntas universais / ajuda do mapa -->
+        <div
+          class="modal-overlay"
+          id="modal-map-help"
+          onclick="closeModal('modal-map-help')"
+          role="dialog"
+          aria-label="Ajuda do mapa"
+        >
+          <div class="modal-sheet" onclick="event.stopPropagation()">
+            <div class="modal-handle"></div>
+            <div style="font-size: 32px; margin-bottom: 8px">❓</div>
+            <h3
+              style="
+                font-size: 18px;
+                font-weight: 700;
+                color: var(--text);
+                margin-bottom: 6px;
+              "
+            >
+              Como posso te ajudar?
+            </h3>
+            <p
+              style="
+                font-size: 13px;
+                color: var(--text-secondary);
+                margin-bottom: 16px;
+                line-height: 1.5;
+              "
+            >
+              Toque numa pergunta. Eu respondo na hora, em linguagem simples.
+            </p>
+
+            <div class="map-question-grid" id="map-help-questions">
+              <button
+                class="map-question-chip"
+                onclick="sendQuickQuestion(this, 'Posso plantar em qualquer lugar da minha terra?')"
+              >
+                <span aria-hidden="true">🌱</span>
+                <span>Posso plantar em qualquer lugar?</span>
+              </button>
+              <button
+                class="map-question-chip"
+                onclick="sendQuickQuestion(this, 'Posso desmatar uma parte da propriedade?')"
+              >
+                <span aria-hidden="true">🪓</span>
+                <span>Posso desmatar uma parte?</span>
+              </button>
+              <button
+                class="map-question-chip"
+                onclick="sendQuickQuestion(this, 'Como funciona a Reserva Legal?')"
+              >
+                <span aria-hidden="true">🌳</span>
+                <span>Como funciona a Reserva Legal?</span>
+              </button>
+              <button
+                class="map-question-chip"
+                onclick="sendQuickQuestion(this, 'O que é APP?')"
+              >
+                <span aria-hidden="true">💧</span>
+                <span>O que é APP?</span>
+              </button>
+              <button
+                class="map-question-chip"
+                onclick="sendQuickQuestion(this, 'Tenho risco de multa?')"
+              >
+                <span aria-hidden="true">💰</span>
+                <span>Tenho risco de multa?</span>
+              </button>
+              <button
+                class="map-question-chip"
+                onclick="sendQuickQuestion(this, 'Posso perder o crédito rural?')"
+              >
+                <span aria-hidden="true">🏦</span>
+                <span>Posso perder o crédito rural?</span>
+              </button>
+            </div>
+
+            <p class="map-panel-section-title" style="margin-top: 16px">
+              🎨 O que significam as cores
+            </p>
+            <div id="map-help-legend"></div>
+
+            <button
+              class="btn-outline-full"
+              onclick="closeModal('modal-map-help')"
+              style="margin-top: 16px"
+            >
+              Fechar
+            </button>
+          </div>
+        </div>
+
+        <!-- Modal: simulador contextual dentro do mapa -->
+        <div
+          class="modal-overlay"
+          id="modal-map-sim"
+          onclick="closeModal('modal-map-sim')"
+          role="dialog"
+          aria-label="Simulador de atividade"
+        >
+          <div class="modal-sheet" onclick="event.stopPropagation()">
+            <div class="modal-handle"></div>
+            <div id="modal-map-sim-content"></div>
+          </div>
+        </div>
+
+        <!-- Modal: entender o motivo -->
+        <div
+          class="modal-overlay"
+          id="modal-map-why"
+          onclick="closeModal('modal-map-why')"
+          role="dialog"
+          aria-label="Entender o motivo"
+        >
+          <div class="modal-sheet" onclick="event.stopPropagation()">
+            <div class="modal-handle"></div>
+            <div id="modal-map-why-content"></div>
+          </div>
+        </div>
+
+        <!-- Modal: legenda explicativa -->
+        <div
+          class="modal-overlay"
+          id="modal-map-legend"
+          onclick="closeModal('modal-map-legend')"
+          role="dialog"
+          aria-label="Explicação da legenda"
+        >
+          <div class="modal-sheet" onclick="event.stopPropagation()">
+            <div class="modal-handle"></div>
+            <div id="modal-map-legend-content"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SCREEN: DIAGNÓSTICO -->
+      <div class="screen" id="screen-diagnostico">
+        <div class="topbar">
+          <button class="btn-back" onclick="goBack()">
+            <svg
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.2"
+            >
+              <path d="M19 12H5M12 5l-7 7 7 7" />
+            </svg>
+          </button>
+          <span>Diagnóstico</span>
+        </div>
+        <div class="content-scroll pad-top-topbar">
+          <div class="diagnostico-hero">
+            <div
+              class="orie-svg-wrap orie-svg-wrap--hero"
+              aria-hidden="true"
+            >
+              <div class="orie-svg"></div>
+            </div>
+            <div class="orie-bubble orie-bubble--diag" role="note">
+              <p>
+                Olha, <strong>geralmente sua terra tá bem</strong>! Só tem
+                <strong>1 coisinha</strong> pra gente cuidar juntos. 😉
+              </p>
+            </div>
+            <h2>Situação do Imóvel</h2>
+            <p>Fazenda São João • Atualizado hoje</p>
+          </div>
+
+          <!-- Termômetro Ambiental -->
+          <div
+            class="diag-thermometer"
+            id="diag-thermometer"
+            role="region"
+            aria-label="Termômetro ambiental da propriedade"
+          >
+            <div class="therm-head">
+              <span class="therm-title">Como está sua terra hoje</span>
+              <span class="therm-badge" id="therm-badge">Tá certo</span>
+            </div>
+
+            <!-- Legenda visual: ruim à esquerda, bom à direita -->
+            <div class="therm-axis" aria-hidden="true">
+              <span>😟 Ruim</span>
+              <span>😐 Mais ou menos</span>
+              <span>😊 Bom</span>
+            </div>
+
+            <div class="therm-bars" id="therm-bars" aria-hidden="true">
+              <!-- Conteúdo de fallback visível (será substituído pelo JS) -->
+              <div class="therm-bar therm-bar--ok"></div>
+              <div class="therm-bar therm-bar--ok"></div>
+              <div class="therm-bar therm-bar--ok"></div>
+              <div class="therm-bar therm-bar--ok"></div>
+              <div class="therm-bar therm-bar--ok"></div>
+              <div class="therm-bar therm-bar--ok"></div>
+              <div class="therm-bar therm-bar--ok"></div>
+              <div class="therm-bar therm-bar--warn"></div>
+              <div class="therm-bar therm-bar--empty"></div>
+              <div class="therm-bar therm-bar--empty"></div>
+            </div>
+
+            <p class="therm-summary" id="therm-summary">
+              Tá bem. Só precisa de 1 cuidado.
+            </p>
+            <button
+              class="therm-listen"
+              onclick="listenDiagnostico()"
+              aria-label="Ouvir resumo do diagnóstico"
+            >
+              <span aria-hidden="true">🔊</span> Ouvir resumo (3 min)
+            </button>
+            <div class="therm-stats">
+              <div class="therm-stat therm-stat--ok">
+                <span class="therm-stat-num" id="therm-num-ok">3</span>
+                ok
+              </div>
+              <div class="therm-stat therm-stat--warn">
+                <span class="therm-stat-num" id="therm-num-warn">1</span>
+                atenção
+              </div>
+              <div class="therm-stat therm-stat--crit">
+                <span class="therm-stat-num" id="therm-num-crit">0</span>
+                crítico
+              </div>
+            </div>
+          </div>
+
+          <!-- Timeline do Diagnóstico -->
+          <div
+            class="diag-timeline"
+            id="diag-timeline"
+            role="region"
+            aria-label="Linha do tempo do diagnóstico"
+          >
+            <h3>Como chegamos aqui</h3>
+            <ul class="tl-list" id="diag-timeline-list">
+              <!-- Preenchido por renderDiagnostico() -->
+            </ul>
+          </div>
+
+          <h3 class="section-label">Análise por área</h3>
+
+          <div class="diag-card ok" onclick="expandDiagCard(this)">
+            <div class="dc-header">
+              <span class="dc-status ok">✓</span>
+              <h4>Reserva Legal</h4>
+              <svg
+                class="dc-chevron"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M6 9l6 6 6-6" />
+              </svg>
+            </div>
+            <div class="dc-body" style="display: none">
+              <div class="dc-row">
+                <strong>O que é:</strong> Área da propriedade que deve ser
+                preservada com vegetação nativa.
+              </div>
+              <div class="dc-row">
+                <strong>Como está:</strong> Sua Reserva Legal de 48 hectares
+                está compatível com a legislação. Tudo certo por aqui!
+              </div>
+              <div class="dc-row">
+                <strong>O que fazer:</strong> Pode ficar tranquilo. Continue
+                mantendo a vegetação dessa área.
+              </div>
+              <button
+                class="diag-card-map-link"
+                data-diag-area="rl"
+                aria-label="Ver Reserva Legal no mapa"
+              >
+                🗺️ Ver no mapa
+              </button>
+            </div>
+          </div>
+
+          <div class="diag-card warn" onclick="expandDiagCard(this)">
+            <div class="dc-header">
+              <span class="dc-status warn">⚠</span>
+              <h4>APP — Área de Preservação Permanente</h4>
+              <svg
+                class="dc-chevron"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M6 9l6 6 6-6" />
+              </svg>
+            </div>
+            <div class="dc-body" style="display: none">
+              <div class="dc-row">
+                <strong>O que é:</strong> Faixa ao redor de rios, nascentes e
+                lagoas que precisa ser protegida por lei.
+              </div>
+              <div class="dc-row">
+                <strong>Como está:</strong> Encontramos uma área de preservação
+                próxima ao Córrego São João. Tem um ponto que merece atenção
+                antes de qualquer plantio ali.
+              </div>
+              <div class="dc-row">
+                <strong>O que fazer:</strong> Bora conversar com a IA antes de
+                tomar qualquer decisão nessa área. Assim você evita dor de
+                cabeça depois.
+              </div>
+              <button
+                class="diag-card-map-link"
+                data-diag-area="app"
+                aria-label="Ver APP no mapa"
+              >
+                🗺️ Ver no mapa
+              </button>
+              <button
+                class="btn-primary"
+                onclick="
+                  event.stopPropagation();
+                  showScreen('screen-ia');
+                "
+                style="margin-top: 12px"
+              >
+                Conversar com a IA →
+              </button>
+            </div>
+          </div>
+
+          <div class="diag-card ok" onclick="expandDiagCard(this)">
+            <div class="dc-header">
+              <span class="dc-status ok">✓</span>
+              <h4>Situação Cadastral (CAR)</h4>
+              <svg
+                class="dc-chevron"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M6 9l6 6 6-6" />
+              </svg>
+            </div>
+            <div class="dc-body" style="display: none">
+              <div class="dc-row">
+                <strong>O que é:</strong> Registro do imóvel rural no sistema
+                ambiental do governo (SICAR).
+              </div>
+              <div class="dc-row">
+                <strong>Como está:</strong> Seu cadastro está identificado e
+                ativo. Sem sobreposições relevantes encontradas.
+              </div>
+              <div class="dc-row">
+                <strong>O que fazer:</strong> Nada por enquanto. Mas vale manter
+                os dados atualizados sempre que houver mudança na propriedade.
+              </div>
+              <button
+                class="diag-card-map-link"
+                data-diag-area="boundary"
+                aria-label="Ver limite da propriedade no mapa"
+              >
+                🗺️ Ver no mapa
+              </button>
+            </div>
+          </div>
+
+          <div class="diag-card ok" onclick="expandDiagCard(this)">
+            <div class="dc-header">
+              <span class="dc-status ok">✓</span>
+              <h4>Vegetação Nativa</h4>
+              <svg
+                class="dc-chevron"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M6 9l6 6 6-6" />
+              </svg>
+            </div>
+            <div class="dc-body" style="display: none">
+              <div class="dc-row">
+                <strong>O que é:</strong> Áreas com mata original da região, sem
+                interferência humana.
+              </div>
+              <div class="dc-row">
+                <strong>Como está:</strong> Identificamos 62 hectares de
+                vegetação nativa na sua propriedade. Ótimo!
+              </div>
+              <div class="dc-row">
+                <strong>O que fazer:</strong> Continue preservando essa área.
+                Ela conta muito para a regularização ambiental do imóvel.
+              </div>
+              <button
+                class="diag-card-map-link"
+                data-diag-area="rl"
+                aria-label="Ver vegetação nativa no mapa"
+              >
+                🗺️ Ver no mapa
+              </button>
+            </div>
+          </div>
+
+          <!-- Próximos passos (substitui o simulador antigo) -->
+          <div
+            class="diag-next-steps"
+            id="diag-next-steps"
+            role="region"
+            aria-label="Próximos passos recomendados"
+          >
+            <h3>📄 Próximos passos</h3>
+            <ul class="diag-next-list" id="diag-next-list">
+              <li class="diag-next-item">
+                <div class="diag-next-icon diag-next-icon--crit" aria-hidden="true">⚠️</div>
+                <div class="diag-next-body">
+                  <p class="diag-next-title">
+                    Recupere a APP do Córrego São João
+                  </p>
+                  <p class="diag-next-desc">
+                    Pra liberar crédito rural e ficar em dia com a lei.
+                  </p>
+                  <button
+                    class="diag-next-btn"
+                    data-diag-prompt="Quero recuperar a APP do Córrego São João. Como faço?"
+                  >
+                    Como fazer →
+                  </button>
+                </div>
+              </li>
+              <li class="diag-next-item">
+                <div class="diag-next-icon" aria-hidden="true">📋</div>
+                <div class="diag-next-body">
+                  <p class="diag-next-title">Atualize seu CAR</p>
+                  <p class="diag-next-desc">
+                    Pra manter tudo em dia sempre que algo mudar na
+                    propriedade.
+                  </p>
+                  <button
+                    class="diag-next-btn"
+                    data-diag-prompt="Me ajuda a atualizar meu CAR. Por onde começo?"
+                  >
+                    Como fazer →
+                  </button>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div style="height: 30px"></div>
+        </div>
+      </div>
+
+      <!-- SCREEN: COMUNIDADE -->
+      <div class="screen" id="screen-comunidade">
+        <div class="topbar">
+          <button class="btn-back" onclick="goBack()">
+            <svg
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.2"
+            >
+              <path d="M19 12H5M12 5l-7 7 7 7" />
+            </svg>
+          </button>
+          <span>Comunidade</span>
+          <button class="btn-icon" onclick="showNewPost()">
+            <svg
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <line x1="12" y1="5" x2="12" y2="19" />
+              <line x1="5" y1="12" x2="19" y2="12" />
+            </svg>
+          </button>
+        </div>
+        <div class="content-scroll pad-top-topbar">
+          <!-- Tabs -->
+          <div class="comm-tabs">
+            <button
+              class="ctab active"
+              onclick="switchCommTab(this, 'tab-posts')"
+            >
+              Publicações
+            </button>
+            <button class="ctab" onclick="switchCommTab(this, 'tab-faq')">
+              Perguntas Frequentes
+            </button>
+          </div>
+
+          <div id="tab-posts">
+            <div class="post-card">
+              <div class="post-header">
+                <div class="post-avatar" style="background: #4caf50">JO</div>
+                <div class="post-meta">
+                  <p class="post-name">José Oliveira</p>
+                  <p class="post-loc">📍 Petrolina, PE • 2h atrás</p>
+                </div>
+              </div>
+              <p class="post-text">
+                Consegui regularizar minha Reserva Legal graças ao Orienta! O
+                assistente me explicou tudo de forma simples e agora estou
+                tranquilo. Recomendo pra todo mundo! 🌿
+              </p>
+              <div class="post-actions">
+                <button class="post-like" onclick="toggleLike(this)">
+                  ❤️ <span>24</span>
+                </button>
+                <button class="post-comment" onclick="showComments()">
+                  💬 <span>8 comentários</span>
+                </button>
+              </div>
+            </div>
+            <div class="post-card">
+              <div class="post-header">
+                <div class="post-avatar" style="background: #ff9800">MA</div>
+                <div class="post-meta">
+                  <p class="post-name">Maria Aparecida</p>
+                  <p class="post-loc">📍 Juazeiro, BA • 5h atrás</p>
+                </div>
+              </div>
+              <p class="post-text">
+                Alguém tem experiência com APP próxima a nascentes? Tenho uma
+                nascente na minha propriedade e fiquei com dúvida sobre o
+                tamanho da área que precisa ser protegida.
+              </p>
+              <div class="post-actions">
+                <button class="post-like" onclick="toggleLike(this)">
+                  ❤️ <span>12</span>
+                </button>
+                <button class="post-comment" onclick="showComments()">
+                  💬 <span>15 comentários</span>
+                </button>
+              </div>
+            </div>
+            <div class="post-card">
+              <div class="post-header">
+                <div class="post-avatar" style="background: #9c27b0">RM</div>
+                <div class="post-meta">
+                  <p class="post-name">Raimundo Melo</p>
+                  <p class="post-loc">📍 Sertão do Pajeú, PE • Ontem</p>
+                </div>
+              </div>
+              <p class="post-text">
+                Dica pro pessoal: usem o mapa do Orienta antes de plantar em
+                novas áreas. Evita muita dor de cabeça! Aqui eu encontrei uma
+                APP que nem sabia que existia. 👍
+              </p>
+              <div class="post-actions">
+                <button class="post-like" onclick="toggleLike(this)">
+                  ❤️ <span>37</span>
+                </button>
+                <button class="post-comment" onclick="showComments()">
+                  💬 <span>5 comentários</span>
+                </button>
+              </div>
+            </div>
+            <button class="btn-outline-full" onclick="showNewPost()">
+              + Nova publicação
+            </button>
+            <div style="height: 30px"></div>
+          </div>
+
+          <div id="tab-faq" style="display: none">
+            <div class="faq-item">
+              <button class="faq-q" onclick="toggleFaq(this)">
+                O que é a Reserva Legal?
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M6 9l6 6 6-6" />
+                </svg>
+              </button>
+              <div class="faq-a">
+                É uma parte da propriedade que a lei exige que seja mantida com
+                vegetação nativa. O tamanho varia conforme a região. Na
+                Caatinga, por exemplo, são 20% da área total.
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-q" onclick="toggleFaq(this)">
+                O que é APP?
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M6 9l6 6 6-6" />
+                </svg>
+              </button>
+              <div class="faq-a">
+                APP significa Área de Preservação Permanente. São faixas de
+                terra que precisam ser protegidas por lei, especialmente ao
+                redor de rios, lagos e nascentes. Você não pode plantar ou
+                construir nessas áreas sem autorização.
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-q" onclick="toggleFaq(this)">
+                Preciso regularizar minha propriedade mesmo tendo CAR?
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M6 9l6 6 6-6" />
+                </svg>
+              </button>
+              <div class="faq-a">
+                Ter o CAR é o primeiro passo, mas pode haver outras questões a
+                regularizar, como APPs desmatadas ou Reserva Legal insuficiente.
+                O Orienta analisa sua situação e te diz exatamente o que precisa
+                ser feito.
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-q" onclick="toggleFaq(this)">
+                Posso perder minha terra por problemas ambientais?
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M6 9l6 6 6-6" />
+                </svg>
+              </button>
+              <div class="faq-a">
+                Pode ficar tranquilo. Problemas ambientais geralmente resultam
+                em multas ou exigências de recuperação, não em perda da terra. O
+                importante é agir logo que identificar um problema. O Orienta te
+                ajuda a entender e resolver.
+              </div>
+            </div>
+            <div style="height: 30px"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SCREEN: SUPORTE -->
+      <div class="screen" id="screen-suporte">
+        <div class="topbar">
+          <button class="btn-back" onclick="goBack()">
+            <svg
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.2"
+            >
+              <path d="M19 12H5M12 5l-7 7 7 7" />
+            </svg>
+          </button>
+          <div class="topbar-center">
+            <div
+              class="ia-avatar-top"
+              style="background: #e8f5e9; font-size: 18px"
+            >
+              👩
+            </div>
+            <div>
+              <p class="ia-name-top">Ana Paula</p>
+              <p class="ia-status-top">Equipe Orienta · Online</p>
+            </div>
+          </div>
+        </div>
+        <div class="chat-area" id="suporte-area">
+          <div class="chat-msg ai">
+            <div class="msg-avatar" style="background: #e8f5e9; color: #2e7d32">
+              👩
+            </div>
+            <div class="msg-bubble">
+              <p>Olá! Sou a Ana Paula, da equipe Orienta. 😊</p>
+              <p>
+                Estou aqui pra te ajudar com qualquer dúvida sobre o aplicativo
+                ou sobre sua situação ambiental. Como posso ajudar hoje?
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="chat-input-area">
+          <input
+            type="text"
+            class="chat-input"
+            id="suporte-input"
+            placeholder="Escreva sua mensagem..."
+            onkeydown="if (event.key === 'Enter') sendSuporteMsg();"
+          />
+          <button class="btn-send" onclick="sendSuporteMsg()">
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="white"
+              stroke-width="2.5"
+            >
+              <line x1="22" y1="2" x2="11" y2="13" />
+              <polygon points="22 2 15 22 11 13 2 9 22 2" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- SCREEN: ACESSIBILIDADE -->
+      <div class="screen" id="screen-accessibility">
+        <div class="topbar">
+          <button class="btn-back" onclick="goBack()">
+            <svg
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.2"
+            >
+              <path d="M19 12H5M12 5l-7 7 7 7" />
+            </svg>
+          </button>
+          <span>Acessibilidade</span>
+        </div>
+        <div class="content-scroll pad-top-topbar">
+          <div class="access-hero">
+            <svg
+              width="56"
+              height="56"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#3A8C68"
+              stroke-width="1.5"
+            >
+              <circle cx="12" cy="5" r="2" />
+              <path d="M12 22V10M8 8l-3 4h14l-3-4M9 22l1-6M15 22l-1-6" />
+            </svg>
+            <h2>Acessibilidade</h2>
+            <p>O Orienta foi pensado para todos. Configure como preferir.</p>
+          </div>
+
+          <div class="access-section">
+            <h3 class="section-label">🔊 Leitura por Voz</h3>
+            <div class="access-card">
+              <div class="access-row">
+                <div>
+                  <p class="access-title">Leitura automática</p>
+                  <p class="access-desc">
+                    Lê as respostas da IA automaticamente
+                  </p>
+                </div>
+                <label class="toggle-switch">
+                  <input type="checkbox" id="toggle-autoread" />
+                  <span class="toggle-slider"></span>
+                </label>
+              </div>
+              <div class="access-row">
+                <div>
+                  <p class="access-title">Velocidade da leitura</p>
+                  <p class="access-desc">
+                    Mais lento é mais fácil de acompanhar
+                  </p>
+                </div>
+                <select class="select-sm" id="speed-select" onchange="setSpeechRate(this.value)">
+                  <option value="0.7">Lento</option>
+                  <option value="1" selected>Normal</option>
+                  <option value="1.3">Rápido</option>
+                </select>
+              </div>
+              <button class="btn-outline-full" onclick="testVoice()">
+                ▶ Testar leitura por voz
+              </button>
+            </div>
+          </div>
+
+          <div class="access-section">
+            <h3 class="section-label">🔤 Tamanho do Texto</h3>
+            <div class="access-card">
+              <div class="font-size-control">
+                <button class="font-btn" onclick="changeFontSize(-1)">
+                  A-
+                </button>
+                <span id="font-size-display">Normal</span>
+                <button class="font-btn" onclick="changeFontSize(1)">A+</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="access-section">
+            <h3 class="section-label">🌓 Aparência</h3>
+            <div class="access-card">
+              <div class="access-row">
+                <div>
+                  <p class="access-title">Alto contraste</p>
+                  <p class="access-desc">
+                    Cores mais fortes para facilitar a leitura
+                  </p>
+                </div>
+                <label class="toggle-switch">
+                  <input
+                    type="checkbox"
+                    id="toggle-contrast"
+                    onchange="toggleContrast(this)"
+                  />
+                  <span class="toggle-slider"></span>
+                </label>
+              </div>
+              <div class="access-row">
+                <div>
+                  <p class="access-title">Modo leitura</p>
+                  <p class="access-desc">
+                    Remove elementos visuais para focar no texto
+                  </p>
+                </div>
+                <label class="toggle-switch">
+                  <input
+                    type="checkbox"
+                    id="toggle-reading"
+                    onchange="toggleReadingMode(this)"
+                  />
+                  <span class="toggle-slider"></span>
+                </label>
+              </div>
+              <div class="access-row">
+                <div>
+                  <p class="access-title">📡 Modo offline</p>
+                  <p class="access-desc">
+                    Funciona sem internet — apenas funcoes basicas
+                  </p>
+                </div>
+                <label class="toggle-switch">
+                  <input
+                    type="checkbox"
+                    id="toggle-offline"
+                    onchange="toggleOfflineMode(this)"
+                  />
+                  <span class="toggle-slider"></span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="access-section">
+            <h3 class="section-label">📷 Interpretação de Imagem por IA</h3>
+            <div class="access-card">
+              <p class="access-desc" style="margin-bottom: 12px">
+                Tire uma foto da sua propriedade e a IA explica o que encontrou
+                — em linguagem simples.
+              </p>
+              <div class="img-upload-area" onclick="simulateImageUpload()">
+                <svg
+                  width="32"
+                  height="32"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#3A8C68"
+                  stroke-width="1.5"
+                >
+                  <rect x="3" y="3" width="18" height="18" rx="2" />
+                  <circle cx="8.5" cy="8.5" r="1.5" />
+                  <polyline points="21 15 16 10 5 21" />
+                </svg>
+                <p>Toque para enviar uma foto</p>
+                <span>Nascente, mata, cerca, plantação...</span>
+              </div>
+            </div>
+          </div>
+
+          <div style="height: 30px"></div>
+        </div>
+      </div>
+
+      <!-- SCREEN: NOTIFICATIONS -->
+      <div class="screen" id="screen-notifications">
+        <div class="topbar topbar-simple">
+          <button class="btn-back" onclick="goBack()">
+            <svg
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.2"
+            >
+              <path d="M19 12H5M12 5l-7 7 7 7" />
+            </svg>
+          </button>
+          <span>Notificações</span>
+        </div>
+        <div class="content-scroll pad-top-topbar">
+          <div class="notif-item unread">
+            <div class="notif-icon" style="background: #e3f2fd">💧</div>
+            <div class="notif-body">
+              <p class="notif-title">Atenção na APP do córrego</p>
+              <p class="notif-text">
+                Seu Raimundo, identificamos um ponto que merece atenção perto do
+                córrego São João.
+              </p>
+              <p class="notif-time">Hoje, 08:30</p>
+            </div>
+          </div>
+          <div class="notif-item">
+            <div class="notif-icon" style="background: #e8f5e9">✅</div>
+            <div class="notif-body">
+              <p class="notif-title">Reserva Legal validada</p>
+              <p class="notif-text">
+                A boa notícia é que sua Reserva Legal está em conformidade com a
+                legislação.
+              </p>
+              <p class="notif-time">Ontem, 14:15</p>
+            </div>
+          </div>
+          <div class="notif-item">
+            <div class="notif-icon" style="background: #fff8e1">📋</div>
+            <div class="notif-body">
+              <p class="notif-title">CAR atualizado</p>
+              <p class="notif-text">
+                Seu cadastro ambiental foi verificado e está ativo no SICAR.
+              </p>
+              <p class="notif-time">3 dias atrás</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MODAL: Area Detail -->
+      <div
+        class="modal-overlay"
+        id="modal-area"
+        onclick="closeModal('modal-area')"
+      >
+        <div class="modal-sheet" onclick="event.stopPropagation()">
+          <div class="modal-handle"></div>
+          <div id="modal-area-content"></div>
+          <button
+            class="btn-primary"
+            onclick="
+              closeModal('modal-area');
+              showScreen('screen-ia');
+            "
+          >
+            💬 Conversar com a IA sobre isso
+          </button>
+        </div>
+      </div>
+
+      <!-- MODAL: Sim result -->
+      <div
+        class="modal-overlay"
+        id="modal-sim"
+        onclick="closeModal('modal-sim')"
+      >
+        <div class="modal-sheet" onclick="event.stopPropagation()">
+          <div class="modal-handle"></div>
+          <div id="modal-sim-content"></div>
+          <button class="btn-primary" onclick="closeModal('modal-sim')">
+            Entendi, obrigado!
+          </button>
+        </div>
+      </div>
+
+      <!-- MODAL: New post -->
+      <div
+        class="modal-overlay"
+        id="modal-newpost"
+        onclick="closeModal('modal-newpost')"
+      >
+        <div class="modal-sheet" onclick="event.stopPropagation()">
+          <div class="modal-handle"></div>
+          <h3 style="margin-bottom: 12px">Nova Publicação</h3>
+          <textarea
+            class="post-textarea"
+            placeholder="Compartilhe sua experiência, dúvida ou dica com a comunidade..."
+          ></textarea>
+          <button
+            class="btn-primary"
+            onclick="
+              closeModal('modal-newpost');
+              showToast('Publicação enviada! 🎉');
+            "
+          >
+            Publicar
+          </button>
+        </div>
+      </div>
+
+      <!-- MODAL: Image IA analysis -->
+      <div
+        class="modal-overlay"
+        id="modal-imganalysis"
+        onclick="closeModal('modal-imganalysis')"
+      >
+        <div class="modal-sheet" onclick="event.stopPropagation()">
+          <div class="modal-handle"></div>
+          <div class="img-analysis-result" id="img-analysis-content">
+            <div class="ia-typing"><span></span><span></span><span></span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TOAST -->
+      <div class="toast" id="toast"></div>
+
+      <!-- SCREEN: PERFIL -->
+      <div class="screen" id="screen-profile">
+        <div class="topbar">
+          <button class="btn-back" onclick="goBack()">
+            <svg
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.2"
+            >
+              <path d="M19 12H5M12 5l-7 7 7 7" />
+            </svg>
+          </button>
+          <span>Meu Perfil</span>
+        </div>
+        <div class="content-scroll pad-top-topbar">
+          <!-- Profile header -->
+          <div
+            style="
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              padding: 24px 0 20px;
+            "
+          >
+            <div
+              style="
+                width: 80px;
+                height: 80px;
+                background: linear-gradient(135deg, #1b3a5c, #3a8c68);
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 28px;
+                font-weight: 800;
+                color: white;
+                margin-bottom: 12px;
+              "
+            >
+              SR
+            </div>
+            <h2
+              style="
+                font-size: 20px;
+                font-weight: 700;
+                color: var(--text);
+                margin-bottom: 4px;
+              "
+            >
+              Raimundo Silva
+            </h2>
+            <p style="font-size: 13px; color: var(--text-secondary)">
+              Produtor Rural • Sertão do Pajeú, PE
+            </p>
+            <div
+              style="
+                margin-top: 10px;
+                background: var(--ok-bg);
+                border-radius: 50px;
+                padding: 6px 16px;
+                display: flex;
+                align-items: center;
+                gap: 6px;
+              "
+            >
+              <span style="font-size: 12px; color: var(--ok); font-weight: 600"
+                >✓ Conta verificada</span
+              >
+            </div>
+          </div>
+
+          <!-- Property info -->
+          <h3 class="section-label">Minha Propriedade</h3>
+          <div class="imovel-info-card" style="margin-bottom: 20px">
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                margin-bottom: 12px;
+              "
+            >
+              <div
+                style="
+                  width: 40px;
+                  height: 40px;
+                  background: #e8f5e9;
+                  border-radius: 10px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 20px;
+                "
+              >
+                🏡
+              </div>
+              <div>
+                <p class="imovel-nome">Fazenda São João</p>
+                <p class="imovel-car">📍 Sertão do Pajeú, PE</p>
+              </div>
+            </div>
+            <p
+              style="
+                font-size: 12px;
+                color: var(--text-secondary);
+                margin-bottom: 8px;
+              "
+            >
+              CAR: BA-2910800-3B5A2C1D
+            </p>
+            <div class="imovel-stats">
+              <div class="imovel-stat">
+                <span class="istat-val">245 ha</span
+                ><span class="istat-lbl">Área total</span>
+              </div>
+              <div class="istat-div"></div>
+              <div class="imovel-stat">
+                <span class="istat-val">48 ha</span
+                ><span class="istat-lbl">Res. Legal</span>
+              </div>
+              <div class="istat-div"></div>
+              <div class="imovel-stat">
+                <span class="istat-val">80%</span
+                ><span class="istat-lbl">Conformidade</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Personal data -->
+          <h3 class="section-label">Dados Pessoais</h3>
+          <div class="access-card" style="margin-bottom: 20px">
+            <div class="access-row">
+              <div>
+                <p class="access-title">Nome completo</p>
+                <p class="access-desc">Raimundo Ferreira Silva</p>
+              </div>
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#B0B7C3"
+                stroke-width="2"
+              >
+                <path
+                  d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"
+                />
+                <path
+                  d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"
+                />
+              </svg>
+            </div>
+            <div class="access-row">
+              <div>
+                <p class="access-title">CPF</p>
+                <p class="access-desc">***.456.789-**</p>
+              </div>
+            </div>
+            <div class="access-row">
+              <div>
+                <p class="access-title">E-mail</p>
+                <p class="access-desc">raimundo.silva@email.com</p>
+              </div>
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#B0B7C3"
+                stroke-width="2"
+              >
+                <path
+                  d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"
+                />
+                <path
+                  d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"
+                />
+              </svg>
+            </div>
+            <div class="access-row">
+              <div>
+                <p class="access-title">Telefone</p>
+                <p class="access-desc">(87) 9 9999-0000</p>
+              </div>
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#B0B7C3"
+                stroke-width="2"
+              >
+                <path
+                  d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"
+                />
+                <path
+                  d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"
+                />
+              </svg>
+            </div>
+          </div>
+
+          <!-- Settings -->
+          <h3 class="section-label">Configurações</h3>
+          <div class="access-card" style="margin-bottom: 20px">
+            <div
+              class="access-row"
+              style="cursor: pointer"
+              onclick="showScreen('screen-accessibility')"
+            >
+              <div>
+                <p class="access-title">🎮 Acessibilidade</p>
+                <p class="access-desc">Voz, tamanho de texto, contraste</p>
+              </div>
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#B0B7C3"
+                stroke-width="2"
+              >
+                <path d="M9 18l6-6-6-6" />
+              </svg>
+            </div>
+            <div
+              class="access-row"
+              style="cursor: pointer"
+              onclick="showScreen('screen-notifications')"
+            >
+              <div>
+                <p class="access-title">🔔 Notificações</p>
+                <p class="access-desc">Alertas e avisos da propriedade</p>
+              </div>
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#B0B7C3"
+                stroke-width="2"
+              >
+                <path d="M9 18l6-6-6-6" />
+              </svg>
+            </div>
+            <div
+              class="access-row"
+              style="cursor: pointer"
+              onclick="showScreen('screen-suporte')"
+            >
+              <div>
+                <p class="access-title">💬 Suporte</p>
+                <p class="access-desc">Fale com a equipe Orienta</p>
+              </div>
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#B0B7C3"
+                stroke-width="2"
+              >
+                <path d="M9 18l6-6-6-6" />
+              </svg>
+            </div>
+          </div>
+
+          <!-- Logout -->
+          <button
+            class="btn-outline-full"
+            style="color: #ef4444; border-color: #ef4444; margin-bottom: 8px"
+            onclick="
+              showScreen('screen-login');
+              showToast('Até logo, Seu Raimundo! 👋');
+            "
+          >
+            Sair da conta
+          </button>
+
+          <div style="height: 30px"></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,263 @@
+/* ============================
+   ORIE — Mascote Vetorial
+   style.css
+   ============================ */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(160deg, #eaf7f0 0%, #f0faf4 50%, #e6f4ea 100%);
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+/* ============================
+   CONTAINER DO MASCOTE
+   ============================ */
+
+.orie-wrapper {
+  position: relative;
+  width: 280px;
+  height: 340px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#orie-mascot {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+/* ============================
+   ANIMAÇÕES GLOBAIS
+   ============================ */
+
+/* Flutuação suave */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-10px); }
+}
+
+/* Respiração (escala sutil) */
+@keyframes breathe {
+  0%, 100% { transform: scaleY(1) scaleX(1); }
+  50%       { transform: scaleY(1.03) scaleX(0.99); }
+}
+
+/* Piscar */
+@keyframes blink {
+  0%, 90%, 100% { transform: scaleY(1); }
+  95%           { transform: scaleY(0.08); }
+}
+
+/* Balançar folhas */
+@keyframes sway-left {
+  0%, 100% { transform: rotate(0deg); }
+  50%       { transform: rotate(-8deg); }
+}
+
+@keyframes sway-right {
+  0%, 100% { transform: rotate(0deg); }
+  50%       { transform: rotate(8deg); }
+}
+
+/* Aparecer suavemente */
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(20px) scale(0.9); }
+  to   { opacity: 1; transform: translateY(0)    scale(1); }
+}
+
+/* Vibração (pensando) */
+@keyframes wiggle {
+  0%, 100% { transform: rotate(0deg); }
+  20%       { transform: rotate(-4deg); }
+  40%       { transform: rotate(4deg); }
+  60%       { transform: rotate(-3deg); }
+  80%       { transform: rotate(3deg); }
+}
+
+/* Celebrar — saltar */
+@keyframes celebrate {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  25%       { transform: translateY(-18px) rotate(-5deg); }
+  75%       { transform: translateY(-12px) rotate(5deg); }
+}
+
+/* Dormir — inclinar */
+@keyframes sleep-tilt {
+  0%, 100% { transform: rotate(0deg); }
+  50%       { transform: rotate(-12deg); }
+}
+
+/* ============================
+   ANIMAÇÕES PADRÃO (idle)
+   ============================ */
+
+#orie-mascot {
+  animation: fade-in 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+/* Flutuação aplicada ao grupo inteiro via JS */
+.orie-floating {
+  animation: float 3.5s ease-in-out infinite;
+}
+
+/* Balançar folhas individualmente */
+#leaf-top {
+  animation: sway-left 3s ease-in-out infinite;
+  transform-box: fill-box;
+  transform-origin: center bottom;
+}
+
+#leaf-left {
+  animation: sway-left 3.4s ease-in-out infinite 0.2s;
+  transform-box: fill-box;
+  transform-origin: right center;
+}
+
+#leaf-right {
+  animation: sway-right 3.4s ease-in-out infinite 0.4s;
+  transform-box: fill-box;
+  transform-origin: left center;
+}
+
+#leaf-bottom-left {
+  animation: sway-left 3.8s ease-in-out infinite 0.6s;
+  transform-box: fill-box;
+  transform-origin: right center;
+}
+
+#leaf-bottom-right {
+  animation: sway-right 3.8s ease-in-out infinite 0.8s;
+  transform-box: fill-box;
+  transform-origin: left center;
+}
+
+/* Piscar automático */
+#eye-left,
+#eye-right {
+  animation: blink 4s ease-in-out infinite;
+  transform-box: fill-box;
+  transform-origin: center center;
+}
+
+#eye-right {
+  animation-delay: 0.05s;
+}
+
+/* ============================
+   ESTADOS / EXPRESSÕES
+   ============================ */
+
+/* Feliz (padrão) */
+.state-happy #mouth-smile {
+  d: path("M183,416 Q200,432 217,416");
+}
+
+/* Triste */
+.state-sad #mouth-smile {
+  d: path("M183,424 Q200,410 217,424");
+}
+
+/* Animado */
+.state-excited {
+  animation: celebrate 0.7s ease-in-out infinite !important;
+}
+
+/* Pensando */
+.state-thinking {
+  animation: wiggle 0.5s ease-in-out infinite !important;
+}
+
+/* Dormindo */
+.state-sleeping {
+  animation: sleep-tilt 2s ease-in-out infinite !important;
+}
+
+/* Confuso */
+.state-confused {
+  animation: wiggle 1s ease-in-out infinite !important;
+}
+
+/* Curioso — boca neutra */
+.state-curious #mouth-smile {
+  d: path("M187,420 Q200,425 213,420");
+}
+
+/* Celebrando — boca mais aberta */
+.state-celebrating #mouth-smile {
+  d: path("M178,413 Q200,438 222,413");
+}
+
+/* ============================
+   PAINEL DE EXPRESSÕES
+   ============================ */
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  max-width: 400px;
+}
+
+.controls h3 {
+  width: 100%;
+  text-align: center;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: #5C3528;
+  text-transform: uppercase;
+  opacity: 0.6;
+}
+
+.btn-expression {
+  padding: 0.45rem 1rem;
+  border-radius: 999px;
+  border: 1.5px solid #43B84A;
+  background: white;
+  color: #2FA24A;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.btn-expression:hover {
+  background: #43B84A;
+  color: white;
+  transform: translateY(-1px);
+}
+
+.btn-expression.active {
+  background: #2FA24A;
+  color: white;
+  border-color: #2FA24A;
+}
+
+/* ============================
+   LABEL "ORIE"
+   ============================ */
+
+.orie-label {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #2FA24A;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  opacity: 0.75;
+}

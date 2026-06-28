@@ -1,0 +1,224 @@
+<svg id="orie-mascot" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" width="100%" role="img" aria-label="Orie - mascote de IA ambiental">
+  <title>Orie</title>
+  <desc>Mascote Orie: uma planta fofa em vaso de barro com olhos e sorriso</desc>
+
+  <defs>
+    <!-- Gradientes do vaso -->
+    <linearGradient id="grad-pot" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F28C52"/>
+      <stop offset="60%" stop-color="#E67845"/>
+      <stop offset="100%" stop-color="#D86739"/>
+    </linearGradient>
+    <linearGradient id="grad-pot-rim" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F59A65"/>
+      <stop offset="100%" stop-color="#D86739"/>
+    </linearGradient>
+    <!-- Gradiente da terra -->
+    <linearGradient id="grad-soil" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#5C3528"/>
+      <stop offset="100%" stop-color="#4B281E"/>
+    </linearGradient>
+    <!-- Gradientes das folhas -->
+    <linearGradient id="grad-leaf-top" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6ED66E"/>
+      <stop offset="100%" stop-color="#43B84A"/>
+    </linearGradient>
+    <linearGradient id="grad-leaf-left" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#6ED66E"/>
+      <stop offset="100%" stop-color="#43B84A"/>
+    </linearGradient>
+    <linearGradient id="grad-leaf-right" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6ED66E"/>
+      <stop offset="100%" stop-color="#43B84A"/>
+    </linearGradient>
+    <linearGradient id="grad-leaf-bl" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#5AC75A"/>
+      <stop offset="100%" stop-color="#2FA24A"/>
+    </linearGradient>
+    <linearGradient id="grad-leaf-br" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#5AC75A"/>
+      <stop offset="100%" stop-color="#2FA24A"/>
+    </linearGradient>
+    <!-- Gradiente do caule -->
+    <linearGradient id="grad-stem" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#2FA24A"/>
+      <stop offset="50%" stop-color="#43B84A"/>
+      <stop offset="100%" stop-color="#2FA24A"/>
+    </linearGradient>
+    <!-- Sombra suave no chão -->
+    <radialGradient id="grad-shadow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#4B281E" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#4B281E" stop-opacity="0"/>
+    </radialGradient>
+    <!-- Clip para o vaso (forma trapezóide) -->
+    <clipPath id="clip-pot-body">
+      <path d="M118,310 Q112,470 108,478 Q200,492 292,478 Q288,470 282,310 Z"/>
+    </clipPath>
+  </defs>
+
+  <!-- ============================= -->
+  <!-- SOMBRA -->
+  <!-- ============================= -->
+  <g id="shadow">
+    <ellipse cx="200" cy="485" rx="80" ry="12" fill="url(#grad-shadow)"/>
+  </g>
+
+  <!-- ============================= -->
+  <!-- VASO - corpo principal -->
+  <!-- ============================= -->
+  <g id="pot" style="transform-origin: 200px 420px;">
+    <!-- Corpo do vaso (trapezoide arredondado) -->
+    <path id="pot-body"
+      d="M118,310 
+         Q115,420 110,460 
+         Q106,475 108,480 
+         Q200,496 292,480 
+         Q294,475 290,460 
+         Q285,420 282,310 Z"
+      fill="url(#grad-pot)"
+      rx="10"/>
+    <!-- Borda superior do vaso (aba) -->
+    <rect id="pot-rim"
+      x="104" y="298" width="192" height="24" rx="12"
+      fill="url(#grad-pot-rim)"/>
+    <!-- Destaque lateral esquerdo do vaso -->
+    <path id="pot-highlight-left"
+      d="M128,320 Q122,400 118,455"
+      stroke="#F59A65" stroke-width="4" stroke-linecap="round" fill="none" opacity="0.5"/>
+  </g>
+
+  <!-- ============================= -->
+  <!-- TERRA -->
+  <!-- ============================= -->
+  <g id="soil">
+    <ellipse id="soil-top"
+      cx="200" cy="308" rx="88" ry="16"
+      fill="url(#grad-soil)"/>
+  </g>
+
+  <!-- ============================= -->
+  <!-- CAULE -->
+  <!-- ============================= -->
+  <g id="stem" style="transform-origin: 200px 310px;">
+    <!-- Caule principal -->
+    <path id="stem-main"
+      d="M200,308 Q198,260 200,180 Q201,140 200,100"
+      stroke="url(#grad-stem)" stroke-width="11" stroke-linecap="round" fill="none"/>
+    <!-- Galho esquerdo superior -->
+    <path id="stem-branch-left-upper"
+      d="M200,155 Q175,145 148,130"
+      stroke="#43B84A" stroke-width="8" stroke-linecap="round" fill="none"/>
+    <!-- Galho direito superior -->
+    <path id="stem-branch-right-upper"
+      d="M200,155 Q225,145 252,130"
+      stroke="#43B84A" stroke-width="8" stroke-linecap="round" fill="none"/>
+    <!-- Galho esquerdo inferior -->
+    <path id="stem-branch-left-lower"
+      d="M200,225 Q168,215 135,205"
+      stroke="#43B84A" stroke-width="8" stroke-linecap="round" fill="none"/>
+    <!-- Galho direito inferior -->
+    <path id="stem-branch-right-lower"
+      d="M200,225 Q232,215 265,205"
+      stroke="#43B84A" stroke-width="8" stroke-linecap="round" fill="none"/>
+  </g>
+
+  <!-- ============================= -->
+  <!-- FOLHAS -->
+  <!-- ============================= -->
+
+  <!-- Folha superior (topo) -->
+  <g id="leaf-top" style="transform-origin: 200px 100px;">
+    <path d="M200,60 
+             C220,55 248,65 252,90 
+             C256,115 228,118 200,100 
+             C172,118 144,115 148,90 
+             C152,65 180,55 200,60 Z"
+      fill="url(#grad-leaf-top)"/>
+    <!-- Nervura central -->
+    <path d="M200,65 Q200,83 200,98"
+      stroke="#2FA24A" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.7"/>
+  </g>
+
+  <!-- Folha esquerda superior -->
+  <g id="leaf-left" style="transform-origin: 148px 130px;">
+    <path d="M148,130
+             C135,108 108,105 100,122
+             C92,140 110,158 138,148
+             C148,168 162,170 168,155
+             C178,135 165,128 148,130 Z"
+      fill="url(#grad-leaf-left)"/>
+    <path d="M148,132 Q134,143 108,140"
+      stroke="#2FA24A" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.7"/>
+  </g>
+
+  <!-- Folha direita superior -->
+  <g id="leaf-right" style="transform-origin: 252px 130px;">
+    <path d="M252,130
+             C265,108 292,105 300,122
+             C308,140 290,158 262,148
+             C252,168 238,170 232,155
+             C222,135 235,128 252,130 Z"
+      fill="url(#grad-leaf-right)"/>
+    <path d="M252,132 Q266,143 292,140"
+      stroke="#2FA24A" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.7"/>
+  </g>
+
+  <!-- Folha inferior esquerda -->
+  <g id="leaf-bottom-left" style="transform-origin: 135px 205px;">
+    <path d="M135,205
+             C118,185 90,185 82,202
+             C74,220 95,240 125,228
+             C132,248 148,252 156,236
+             C164,216 152,204 135,205 Z"
+      fill="url(#grad-leaf-bl)"/>
+    <path d="M135,207 Q118,218 92,215"
+      stroke="#2FA24A" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.7"/>
+  </g>
+
+  <!-- Folha inferior direita -->
+  <g id="leaf-bottom-right" style="transform-origin: 265px 205px;">
+    <path d="M265,205
+             C282,185 310,185 318,202
+             C326,220 305,240 275,228
+             C268,248 252,252 244,236
+             C236,216 248,204 265,205 Z"
+      fill="url(#grad-leaf-br)"/>
+    <path d="M265,207 Q282,218 308,215"
+      stroke="#2FA24A" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.7"/>
+  </g>
+
+  <!-- ============================= -->
+  <!-- ROSTO -->
+  <!-- ============================= -->
+
+  <!-- Olho esquerdo -->
+  <g id="eye-left" style="transform-origin: 166px 378px;">
+    <ellipse cx="166" cy="378" rx="15" ry="17" fill="#111111"/>
+    <g id="eye-left-shine">
+      <circle id="shine-left-big" cx="160" cy="372" r="5" fill="#FFFFFF"/>
+      <circle id="shine-left-small" cx="170" cy="383" r="2.5" fill="#FFFFFF" opacity="0.7"/>
+    </g>
+  </g>
+
+  <!-- Olho direito -->
+  <g id="eye-right" style="transform-origin: 234px 378px;">
+    <ellipse cx="234" cy="378" rx="15" ry="17" fill="#111111"/>
+    <g id="eye-right-shine">
+      <circle id="shine-right-big" cx="228" cy="372" r="5" fill="#FFFFFF"/>
+      <circle id="shine-right-small" cx="238" cy="383" r="2.5" fill="#FFFFFF" opacity="0.7"/>
+    </g>
+  </g>
+
+  <!-- Boca -->
+  <g id="mouth" style="transform-origin: 200px 418px;">
+    <path id="mouth-smile"
+      d="M183,416 Q200,432 217,416"
+      stroke="#111111" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+  </g>
+
+  <!-- Bochechas (blush) -->
+  <g id="cheeks">
+    <ellipse id="cheek-left" cx="145" cy="400" rx="14" ry="9" fill="#F28C52" opacity="0.35"/>
+    <ellipse id="cheek-right" cx="255" cy="400" rx="14" ry="9" fill="#F28C52" opacity="0.35"/>
+  </g>
+</svg>
